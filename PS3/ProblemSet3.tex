@@ -1,0 +1,79 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+\begin{document}
+\title{Problem Set 3}
+\author{Hoang Nguyen, Huy Nguyen}
+\maketitle
+
+
+\begin{problem}{1}
+
+\item 1\\
+
+We have :\\
+
+
+\[\ell_n=\sum_{i=1}^{n}(\log \theta + \theta\log\tau - (\theta+1)\log X_i) \mathbf{1}(X_i \geqslant \tau)\]
+\[\Rightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(\frac{1}{\theta}+ \log \tau-\log X_i) \mathbf{1}(X_i \geqslant \tau)=0\]
+\[\Leftrightarrow \theta= \frac{\sum_{i=1}^{n}(\mathbf{1}(X_i \geqslant \tau))}{\sum_{i=1}^{n}(\log X_i-\log \tau)\mathbf{1}(X_i \geqslant \tau)}\]
+
+\item 3\\
+\[\ell_n=\sum_{i=1}^{n}(\frac{1}{2}\log \theta+(\sqrt{\theta}-1)\log X_i)\mathbf{1}(0 \leqslant X_i \leqslant1)\]
+\[\Rightarrow \frac{\partial \ell_n}{\partial \theta}=(\frac{1}{2\theta}+\frac{\log X_i}{2\sqrt{\theta}})\mathbf{1}(0 \leqslant X_i \leqslant1)=0\]
+\[\Leftrightarrow \theta=\Big(\frac{\sum_{i=1}^{n}1}{\sum_{i=1}^{n}\log X_i}\Big)^2\]
+
+
+\item 4\\
+\[\ell_n=\sum_{i=1}^{n}(\log X_i-2\log \theta-\frac{{X_i}^2}{2\theta^2})\mathbf{1}(X_i \geqslant 0)\]
+\[\Leftrightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(-\frac{2}{\theta}+\frac{{X_i}^2}{\theta^3})\mathbf{1}(X_i \geqslant 0)=0\]
+\[\Leftrightarrow \theta=\frac{\sum_{i=1}^{n}(X_i)\mathbf{1}(X_i \geqslant 0)}{\sum_{i=1}^{n}\sqrt{2}\mathbf{1}(X_i \geqslant 0)}\]
+
+
+\item 5\\
+\[\ell_n=\sum_{i=1}^{n}(\log \theta+ \log \tau+(\tau-1)\log X_i-\theta{X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)\]
+\[\Leftrightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(\frac{1}{\theta}-{X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)\]
+\[\Leftrightarrow \theta=\frac{\sum_{i=1}^{n} 1\mathbf{1}(X_i \geqslant 0) }{\sum_{i=1}^{n} ({X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)}\]
+
+
+
+\end{problem}
+
+\begin{problem}{2}
+
+We have :\\
+
+\[\mathcal{L}(\mu, \sigma)=\prod_{i=1}^n\Big(\frac{1}{\sigma}\exp({-\frac{1}{2\sigma^2}(X_i-\mu)^2})\Big)\]
+\[\ell_n=\log \mathcal{L}(\mu, \sigma)=\sum_{i=1}^n\Big( -\log\sigma-\frac{1}{2\sigma^2}(X_i-\mu)^2\Big)\]
+\[=\sum_{i=1}^n\Big(-\log\sigma -\frac{1}{2\sigma^2}(X_i-\bar{X}+\bar{X}-\mu)^2\Big)\]
+\[=\sum_{i=1}^n\Big(-\log\sigma -\frac{1}{2\sigma^2}\Big((X_i-\bar{X})^2+2(X_i-\bar{X})(\bar{X}-\mu) +(\bar{X}-\mu)^2\Big)\Big)\]
+\[-n\log\sigma - \frac{1}{2\sigma^2}\Big( \sum_{i=1}^n(X_i-\bar{X})^2+2(\bar{X}-\mu)\sum_{i=1}^n(X_i-\bar{X})+n(\bar{X}-\mu)^2\Big)\]
+
+Because $\sum_{i=1}^n(X_i-\bar{X}=0)$, we get : \\
+\[\ell_n=-n\log\sigma -\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{2\sigma^2}-\frac{n(\bar{X}-\mu)}{2\sigma^2}\]
+
+\[\Rightarrow \begin{cases} \frac{\partial \ell_n}{\partial \mu}=\frac{n(\bar{X
+}-\mu)}{\sigma^2}=0\\ \frac{\partial \ell_n}{\partial \sigma}=\frac{-n}{\sigma}+\frac{1}{\sigma^3}\Big( \sum_{i=n}^n(X_i-\bar{X})^2+n(\bar{X}-\mu)^2\Big)=0 \end{cases}\]
+\[\Leftrightarrow \begin{cases} \mu=\bar{X}\\ \sigma^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}\end{cases}\]
+
+Prove this this is consitent: \\
+
+To do this, we need to prove bias $\rightarrow$ 0 and $\mathbf{V}(\mu, \sigma^2) \rightarrow 0$ as n $\rightarrow \infty$, which means that prove $\mathbb{E}[\bar{X}]= \mu$ and $\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}]=0$
+
+\[\mathbb{E}[\bar{X}]=\mathbb{E}[\frac{\sum_{i=1}^n X_i}{n}]=\frac{1}{n}\sum_{i=1}^n\mathbb{E}[X_i]=\frac{n\mu}{n}=\mu\]
+\[\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}]=\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\mu+\mu-\bar{X})^2}{n}]=\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\mu)^2+2(\mu-\bar{X})n(\bar{X}-\mu)+n(\mu-\bar{X})^2}{n}]\]
+\[= \mathbb{E}\Big[\frac{\sum_{i=1}^n(X_i-\mu)^2-n(\mu-\bar{X})^2}{n}\Big]=\frac{\sigma^2-n\frac{\sigma^2}{n}}{n}=0\]
+
+\end{problem}
+
+\end{document}

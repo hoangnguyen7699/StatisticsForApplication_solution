@@ -1,0 +1,230 @@
+\documentclass[10pt]{article}
+ 
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+\begin{document}
+\title{Problem Set 1}
+\author{Hoang Nguyen, Huy Nguyen}
+\maketitle
+    
+\begin{problem}{1}
+\item 1.
+We have:\\
+\[\mathbb{E}[X_n]=(1-\frac{1}{n^2}).\frac{1}{n}+\frac{1}{n^2}.n\]
+\[=\frac{1}{n}-\frac{1}{n^3}+\frac{1}{n}\]
+\[=\frac{2}{n}-\frac{1}{n^3}\]
+
+On the other hand:
+\[lim_{n \rightarrow \infty}\mathbb{P}[|X_n| > \epsilon]=lim_{n \rightarrow \infty}\mathbb{P}[X_n > \epsilon]\leq \frac{lim_{n \rightarrow \infty}\mathbb{E}[X_n]}{\epsilon}=\frac{lim_{n \rightarrow \infty}(\frac{2}{n}-\frac{1}{n^3})}{\epsilon}=0\]
+
+
+Hence $X_n$ converge in probability
+
+\[\mathbb{E}[X_n^2]=(1-\frac{1}{n^2}).\frac{1}{n^2}+\frac{1}{n^2}.n^2\]
+\[=\frac{1}{n^2}-\frac{1}{n^4}+1\]
+\[\Rightarrow lim_{n \rightarrow \infty}\mathbb{E}[X_n^2]=1\] 
+
+We have: \\
+\[lim_{n \rightarrow \infty}\mathbb{E}[(X_n-X)^2]=lim_{n \rightarrow \infty}(\mathbb{E}[X_n^2]-2\mathbb{E}[X_n]\mathbb{E}[X]+\mathbb{E}[X^2])\]
+\[=1+\mathbb{E}[X^2]\qquad (because\quad \mathbb{E}[X_n]=0)\]
+
+If $X_n$ converge in $\mathbb{L}^2$ $\Rightarrow$ $1+\mathbb{E}[X^2]=0 \Rightarrow \mathbb{E}[X^2]=-1 \quad (imposible)$\\
+
+Hence, $X_n$ does not converge in $\mathbb{L}^2$
+
+\item 2.
+We have:\\
+\[\mathbb{E}[X_n]=p\]
+\[\mathbb{V}[X_n]=\frac{p(1-p)}{n}\]
+
+In addition:
+
+\[n\bar{X_n}=\sum_{i=1}^{n} X_i\]
+\[\Rightarrow \frac{n\bar{X_n}-\mu_n}{\sigma_n}=\frac{\sum_{i=1}^{n} X_i-p}{\frac{p(1-p)}{n}}\sim\mathbb{N}(0,1)\qquad (Central \quad Limit \quad Theorem)\]
+\[\Rightarrow \mathbb{P}[\frac{n\bar{X_n}-p}{\frac{p(1-p)}{n}}\lneq t]=\Phi(t)\]
+\[\Rightarrow \mathbb{P}\Big[ n\bar{X_n} \lneq \frac{tp(1-p)}{n}+p \Big]=\Phi(t)\]
+\[\Rightarrow \mathbb{P}[ n\bar{X_n} \lneq x]=\Phi(\frac{(x-p)n}{p(1-p)}\]
+\[\Rightarrow F_n(x)=\Phi(\frac{(x-p)n}{p(1-p)} \qquad (1)\]
+
+(1) is the CDF of distribution of n$\bar{X_n}$
+
+We have:\\
+\[\mathbb{E}[(\bar{X_n}-p)^2]= \mathbb{E}[\bar{X_n}^2]-2p\mathbb{E}[\bar{X_n}]+ p^2\]
+\[=\sigma_n+ (\mathbb{E}[\bar{X_n}])^2-2p\mathbb{E}[\bar{X_n}]+ p^2\]
+\[=\frac{p(1-p)}{n}+p^2-2p^2+ p^2\]
+\[=\frac{p(1-p)}{n}\]
+\[\Rightarrow lim_{n \rightarrow \infty} \mathbb{E}[(\bar{X_n}-p)^2]=0\]\\
+
+$\Rightarrow \bar{X_n}$ converges to p in L 
+
+
+\item 3.
+a) From Markov's Inequality: \\
+\[\mathbb{P}[|X_n|> \epsilon]= \mathbb{P}[X_n>\epsilon] < \frac{\mathbb{E}[X_n]}{\epsilon}=\frac{\lambda}{\epsilon}= \frac{1}{n\epsilon}\]
+\[\Rightarrow \lim_{n \rightarrow \infty} \mathbb{P}[|X_n| > \epsilon]=0\]
+\[ \Rightarrow X_n \xrightarrow{\mathbb{P}}0\]
+
+b) We have: \\
+\[\mathbb{P}[|nX_n|< \epsilon]= \mathbb{P}[X_n<\frac{\epsilon}{n}]=\sum_{i=0}^{\frac{\epsilon}{n}}e^{-\lambda}\frac{\lambda^i}{i!}\] 
+
+
+
+
+
+
+
+\end{problem}
+
+\begin{problem}{2}
+\item 1. True \\
+\item 2.True \\
+\item 3.
+\item 4.\\
+
+We get the formula for the interval confident of Bernulli random variables:\\
+\[\mathbb{L}=\Big[\bar{X_n}- \frac{1.96\sqrt{p(1-p)}}{\sqrt{n}},\bar{X_n}+ \frac{1.96\sqrt{p(1-p)}}{\sqrt{n}} \Big]\]
+
+In addition:\\
+\[p=0.43\]
+\[n=100\]
+\[\Rightarrow \mathbb{L}=[0.33,0.53]\]
+
+\end{problem}
+
+\begin{problem}{3}
+\item 1. \\
+
+We have:\\
+\[\mu_n=\mathbb{E}_n[\bar{X_n}]=p\]
+\[\sigma_n=\frac{p(1-p)}{n}\]
+
+By using Central Limit Theorem:\\
+\[\Rightarrow \bar{X_n}\sim \mathbb{N}(\mu,\frac{\sigma_n^2}{n} )\]
+\[\sqrt{n}\frac{\bar{X_n}-p}{\sqrt{p(1-p)}}\sim \mathbb{N}(0,1)\]
+\item 2. \\
+
+We have: $Z \backsim N(0,1)$\\
+
+Hence, $\mathbb{P}[|Z| \leqslant t]=\mathbb{P}[-t\leqslant Z \leqslant t]= \phi(t)-\phi(-t)= \phi(t)-(1-\phi(t))=2\phi(t)-1= 2\mathbb{P}[Z \leqslant t]-1$.
+
+\item 3. \\
+
+We have:\\
+\[\mathbb{P}[p \in I_t]=\mathbb{P}\Big[\bar{X_n}- \frac{t\sqrt{p(1-p)}}{\sqrt{n}}\leqslant p \leqslant\bar{X_n}+ \frac{t\sqrt{p(1-p)}}{\sqrt{n}} \Big]\]
+\[=\mathbb{P}\Big[ \Big|\sqrt{n}\frac{\bar{X_n}-p}{\sqrt{p(1-p)}}\Big|\leqslant t\Big]\]
+Because:
+\[\sqrt{n}\frac{\bar{X_n}-p}{\sqrt{p(1-p)}}\sim \mathbb{N}(0,1)\]
+\[\mathbb{P}[|Z| \leqslant t]=2\mathbb{P}[Z \leqslant t]-1\quad (Z=\mathbb{N}(0,1))\]
+Hence, \\
+\[\mathbb{P}[p \in I_t]\rightarrow 2\phi(t)-1, n\rightarrow\infty \quad (using\quad the \quad previous \quad questions)\]
+
+\item 4. \\
+
+We have:\\
+\[\mathbb{P}[p \in I_t]\rightarrow 2\phi(t)-1=0.95\]
+\[\Rightarrow {t_0}=1.96\]
+
+Hence, \\
+\[I_{t_0}=\Big[\bar{X_n}- \frac{t\sqrt{p(1-p)}}{\sqrt{n}}, \bar{X_n}+ \frac{t\sqrt{p(1-p)}}{\sqrt{n}} \Big]\]
+\[=\Big[\bar{X_n}- \frac{1.96\sqrt{p(1-p)}}{\sqrt{n}}, \bar{X_n}+ \frac{1.96\sqrt{p(1-p)}}{\sqrt{n}} \Big]\]
+
+Using the fact that: \\
+\[0 \leqslant\sqrt{p(1-p)} \leqslant \frac{1}{4}\]
+
+We get: \\
+\[I_t=\Big[ \Big]\]
+\[\Rightarrow I_t=\Big[ \bar{X_n}-\frac{0.49}{\sqrt{n}},\bar{X_n}+\frac{0.49}{\sqrt{n}} \Big]\]
+
+\item 5. \\
+
+a) Using Cauchy's inequality: \\
+\[p(1-p) \leqslant \frac{q+1-p}{4}=\frac{1}{4}\]
+
+b)From the previous question: \\
+\[0 \leqslant\sqrt{p(1-p)} \leqslant \frac{1}{2}\]
+
+We get: \\
+\[I_t=\Big[ \Big]\]
+\[\Rightarrow I_t=\Big[ \bar{X_n}-\frac{0.98}{\sqrt{n}},\bar{X_n}+\frac{0.98}{\sqrt{n}} \Big]\]
+
+c) Because $p \leqslant 0.3 \Rightarrow p(1-p) \leqslant 0.21$
+\[\Rightarrow J_1=\Big[ \bar{X_n}-\frac{1.96\sqrt{0.21}}{\sqrt{n}},\bar{X_n}+\frac{1.96\sqrt{02.1}}{\sqrt{n}} \Big]= \Big[ \bar{X_n}-\frac{0.89}{\sqrt{n}},\bar{X_n}+\frac{0.89}{\sqrt{n}} \Big]\]
+
+\item 6. \\
+
+a) We have:\\
+\[ p \in I_{t_0} \Longleftrightarrow  \bar{X_n}-\frac{t_0\sqrt{p(1-p)}}{\sqrt{n}}\leqslant p \leqslant\bar{X_n}+\frac{t_0\sqrt{p(1-p)}}{\sqrt{n}} \]
+\[\Longleftrightarrow p^2(1+\frac{{t_0}^2}{n})-(2\bar{X_n}+\frac{{t_0}^2}{n})p+{\bar{X_n}}^2 \leqslant 0\]
+
+b) Solving this inequality we get the value of p in form:\\
+\[\Big[\frac{-b-\sqrt{\Delta}}{2a},\frac{-b+\sqrt{\Delta}}{2a}\Big] \]
+
+With:
+\[b=-(2\bar{X_n}+\frac{{t_0}^2}{n})\]
+\[\Delta=\frac{{t_0}^4}{n^2}+4\bar{X_n}\frac{{t_0}^2}{n}-\frac{4\bar{X_n}^2{t_0}^2}{n}\]
+\[a=1+\frac{{t_0}^2}{n}\]
+
+c) From the previous question, we have : \\
+
+\[J_2= \Big[\frac{2\bar{X_n}+\frac{{t_0}^2}{n}-\sqrt{\frac{{t_0}^4}{n^2}+4\bar{X_n}\frac{{t_0}^2}{n}-\frac{4\bar{X_n}^2{t_0}^2}{n}}}{2+\frac{2{t_0}^2}{n}}, \frac{2\bar{X_n}+\frac{{t_0}^2}{n}+\sqrt{\frac{{t_0}^4}{n^2}+4\bar{X_n}\frac{{t_0}^2}{n}-\frac{4\bar{X_n}^2{t_0}^2}{n}}}{2+\frac{2{t_0}^2}{n}}\Big]\]
+
+
+
+
+\item 7. \\
+
+Replace p with $\bar{X_n}$, we get: \\
+
+\[J_3=\Big[\bar{X_n}- \frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\sqrt{n}},\bar{X_n}+ \frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\sqrt{n}}  \Big]\]
+
+As n goes to infinity, we have:\\
+
+\[\bar{X_n} \xrightarrow{\mathbb{P}} \mu=p\]
+\[\Rightarrow J_3\longrightarrow \Big[\bar{X_n}- \frac{{t_0}\sqrt{p(1-p)}}{\sqrt{n}}, \bar{X_n}+ \frac{{t_0}\sqrt{p(1-p)}}{\sqrt{n}}  \Big]\longrightarrow 0.95\]
+
+
+
+\item 8. \\
+
+a) We have from the question: \\
+\[n=10000\]
+\[\bar{X_n}=1-0.7341=0.2659\]
+
+
+
+
+\[J_1=\Big[ \bar{X_n}-\frac{0.89}{\sqrt{n}},\bar{X_n}+\frac{0.89}{\sqrt{n}} \Big]=\Big[ 0.2659-\frac{0.89}{\sqrt{100}}, 0.2659+\frac{0.89}{\sqrt{100}}\Big]=\Big[0.1769,0.3549 \Big]\]
+
+\[J_2= \Big[\frac{2\bar{X_n}+\frac{{t_0}^2}{n}-\sqrt{\frac{{t_0}^4}{n^2}+4\bar{X_n}\frac{{t_0}^2}{n}-\frac{4\bar{X_n}^2{t_0}^2}{n}}}{2+\frac{2{t_0}^2}{n}}, \frac{2\bar{X_n}+\frac{{t_0}^2}{n}+\sqrt{\frac{{t_0}^4}{n^2}+4\bar{X_n}\frac{{t_0}^2}{n}-\frac{4\bar{X_n}^2{t_0}^2}{n}}}{2+\frac{2{t_0}^2}{n}}\Big]\]
+
+\[=\Big[\frac{2\times0.2659+\frac{1.96^2}{100}-\sqrt{\frac{{1.96}^4}{100^2}+4\times 0.2659\times\frac{1.96^2}{100}-\frac{4\times0.2659^2\times  1.96^2}{100}}}{2+\frac{2\times 1.96^2}{100}}, \frac{2\times0.2659+\frac{1.96^2}{100}+\sqrt{\frac{{1.96}^4}{100^2}+4\times 0.2659\times\frac{1.96^2}{100}-\frac{4\times0.2659^2\times  1.96^2}{100}}}{2+\frac{2\times 1.96^2}{100}}\Big]\]
+\[=\Big[0.189,0.365\Big]\]
+
+
+\[J_3=\Big[\bar{X_n}- \frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\sqrt{n}},\bar{X_n}+ \frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\sqrt{n}}  \Big]\]
+\[=\Big[0.2659- \frac{1.96\sqrt{0.2659\times(1-0.2659)}}{\sqrt{100}},0.2659+ \frac{1.96\sqrt{0.2659\times(1-0.2659)}}{\sqrt{100}}\Big]\]
+\[=\Big[0.1793,0.3524 \Big]\]
+
+b) From the previous question, we get the tightest interval of p is $J_3$, so we obtain $J_3$ to solve this problem. We have:\\
+
+The length of the interval is at most 0.05:
+\[\Rightarrow \frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\bar{X_n}\sqrt{n}} \leqslant 0.025\]
+\[\Longleftrightarrow {\Big(\frac{{t_0}\sqrt{\bar{X_n}(1-\bar{X_n})}}{\bar{X_n}\times0.025} \Big)}^2 \leqslant n\]
+\[\Longleftrightarrow 16970 \leqslant n\]
+
+So, the minimal of n is 16970.
+
+
+ 
+
+\end{problem}
+\end{document}
