@@ -13,10 +13,10 @@ I want to address several issues here: (1) Currently I still do not get the perm
 
 ### Read
 If you want to view only pdf files, you can clone this repository and find pdf file in each folders (There are 11 folders corresponding to 11 problem sets). 
-[PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS1/ProblemSet1.pdf) file for Problem set 1.
-[PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS2/Problem_set2.pdf) file for Problem set 2.
-[PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS3/ProblemSet3.pdf) file for Problem set 3.
-[PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS5/ProblemSet5.pdf) file for Problem set 5.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS1/ProblemSet1.pdf) file for Problem set 1.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS2/Problem_set2.pdf) file for Problem set 2.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS3/ProblemSet3.pdf) file for Problem set 3.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS5/ProblemSet5.pdf) file for Problem set 5.
 
 ### Contribute
 This solution manual is work-in-progress so any kind of contributions would be appreciated. There are a few ways you can contribute to make it better:
