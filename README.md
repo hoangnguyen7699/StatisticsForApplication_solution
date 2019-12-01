@@ -29,5 +29,6 @@ This solution manual is work-in-progress so any kind of contributions would be a
 ### Acknowledgments
 
 1. Special thanks to Huy Nguyen. He provides some analytical soultions for problems in this course's assigments. 
+
 **Star if you like :) **
 --Hoang Nguyen--
