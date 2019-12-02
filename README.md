@@ -13,10 +13,17 @@ I want to address several issues here: (1) Currently I still do not get the perm
 
 ### Read
 If you want to view only pdf files, you can clone this repository and find pdf file in each folders (There are 11 folders corresponding to 11 problem sets). 
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS1/ProblemSet1.pdf) solution manual file for Problem set 1.
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS2/Problem_set2.pdf) solution manual file for Problem set 2.
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS3/ProblemSet3.pdf) solution manual file for Problem set 3.
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS5/ProblemSet5.pdf) solution manual file for Problem set 5.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet1.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS1/ProblemSet1.pdf) solution manual file for Problem set 1.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet2.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS2/Problem_set2.pdf) solution manual file for Problem set 2.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet3.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS3/ProblemSet3.pdf) solution manual file for Problem set 3.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet4.pdf) questions for Problem set 4 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet5.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS5/ProblemSet5.pdf) solution manual file for Problem set 5.
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet6.pdf) questions for Problem set 6 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet7.pdf) questions for Problem set 7 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet8.pdf) questions for Problem set 8 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet9.pdf) questions for Problem set 9 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet10.pdf) questions for Problem set 10 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet11.pdf) questions for Problem set 11 
 
 ### Contribute
 This solution manual is work-in-progress so any kind of contributions would be appreciated. There are a few ways you can contribute to make it better:
