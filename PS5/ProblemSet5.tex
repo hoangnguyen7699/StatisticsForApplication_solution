@@ -44,10 +44,7 @@ From previous result, if $\lambda_0 \in L$, we do not reject $H_0$. Otherwise, t
 
 
 
-\item 3. We actually complete this exercise in previous solution.\\
-bias$\Big(\bar{X_i}(1-\bar{X_i})\Big)= \mathbb{E}[\bar{X_i}(1-\bar{X_i})] - p(1-p)= \frac{n(n-1)}{n^2} p(1-p) -p(1-p)$.
-\item 4. To find an unbiased estimator, we have to find x such that $\frac{xn(n-1)}{n^2}=1 \Rightarrow x=\frac{n}{n-1}$.\\
-Hence, an unbiased estimator can be $\frac{n}{n-1}\bar{X_i}(1-\bar{X_i})$
+
 
 
 
@@ -57,13 +54,24 @@ Hence, an unbiased estimator can be $\frac{n}{n-1}\bar{X_i}(1-\bar{X_i})$
 
 \begin{problem}{2}
 \item 1.
-$(\mathbb{N}, (Poiss(\lambda))_{\lambda>0})$. This paramter is identified.
+Take derivative of Gaussian expression respect to $\mu_1, \sigma_1, \mu_2, \sigma_2$ and set it equals to 0, we get:\\
+$\hat{\mu_1}=\bar{X_{n1}}$, $\hat{\mu_2}=\bar{Y_{n2}}$, $\hat{\sigma_1}^2=\frac{1}{n1}\sum_{i=1}^{n1} (X_i-\mu_1)^2$ and $\hat{\sigma_2}^2=\frac{1}{n1}\sum_{i=1}^{n2} (Y_i-\mu_2)^2$.
+
 \item 2.
-$(\mathbb{R_+}, (Exp(\lambda))_{10>\lambda>0})$. This parameter is identified.
+We have: $\frac{n_1\hat{\sigma_1}^2}{\sigma_1^2}=\frac{n_1\frac{1}{n1}\sum_{i=1}^{n_1} (X_i-\mu_1)^2}{\sigma_1^2}=\sum_{i=1}^{n_1}(\frac{X_i-\mu_1}{\sigma_1})^2$. Since $\frac{X_i-\mu_1}{\sigma_1}\sim N(0,1)$, hence $\frac{n_1\hat{\sigma_1}^2}{\sigma_1^2} \sim \chi_{n1}^2$.\\
+By similar method, we get $\frac{n_2\hat{\sigma_2}^2}{\sigma_2^2} \sim \chi_{n2}^2$
+
+
+
+
+
+
 \item 3.
-$(\mathbb{R_+}, (Uni(0, \theta))_{\theta >0})$. This parameter is identified.
+From previous result, $\frac{n_1\hat{\sigma_1}^2}{\sigma_1^2} + \frac{n_2\hat{\sigma_2}^2}{\sigma_2^2} \sim \chi_{n1}^2 + \chi_{n2}^2 \sim \chi_{n1+n2}^2$
+
+
 \item 4.
-$(\mathbb{R}, (N(\mu, \sigma^2))_{(\mu, \sigma^2) \in \mathbb{R} \times \mathbb{R_+}})$. These parater are identified.
+From CTT, $\bar{X_{n1}} \sim N(\mu_1, \sigma_1^2)$, $\bar{X_{n2}} \sim N(\mu_2, \sigma_2^2)$. Hence, $\Delta=\hat{\mu_1}-\hat{\mu_2}=\bar{X_{n1}}- \bar{X_{n2}} \sim N(\mu_1-\mu_2, \sigma_1^2+\sigma_2^2)$.
 \item 5.
 \[\mathbb{P}(N(\mu, \sigma^2)>0)=\mathbb{P}\Big( N(0,1) > \frac{-\mu}{\sigma^2} \Big)=\phi(\frac{\mu}{\sigma^2})\]
 Hence, the statistical model is: $(\{0,1\}, (Ber(\phi(\frac{\mu}{\sigma^2}))_{(\mu, \sigma^2) \in \mathbb{R} \times \mathbb{R_+}})$. This model depends on $\frac{\mu}{\sigma^2} \Rightarrow$ these parameters are not identified.
