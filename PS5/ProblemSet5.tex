@@ -55,7 +55,7 @@ From previous result, if $\lambda_0 \in L$, we do not reject $H_0$. Otherwise, t
 \begin{problem}{2}
 \item 1.
 Take derivative of Gaussian expression respect to $\mu_1, \sigma_1, \mu_2, \sigma_2$ and set it equals to 0, we get:\\
-$\hat{\mu_1}=\bar{X_{n1}}$, $\hat{\mu_2}=\bar{Y_{n2}}$, $\hat{\sigma_1}^2=\frac{1}{n1}\sum_{i=1}^{n1} (X_i-\mu_1)^2$ and $\hat{\sigma_2}^2=\frac{1}{n1}\sum_{i=1}^{n2} (Y_i-\mu_2)^2$.
+$\hat{\mu_1}=\bar{X_{n1}}$, $\hat{\mu_2}=\bar{Y_{n2}}$, $\hat{\sigma_1}^2=\frac{1}{n1}\sum_{i=1}^{n1} (X_i-\hat{\mu_1})^2$ and $\hat{\sigma_2}^2=\frac{1}{n1}\sum_{i=1}^{n2} (Y_i-\hat{\mu_2})^2$.
 
 \item 2.
 We have: $\frac{n_1\hat{\sigma_1}^2}{\sigma_1^2}=\frac{n_1\frac{1}{n1}\sum_{i=1}^{n_1} (X_i-\mu_1)^2}{\sigma_1^2}=\sum_{i=1}^{n_1}(\frac{X_i-\mu_1}{\sigma_1})^2$. Since $\frac{X_i-\mu_1}{\sigma_1}\sim N(0,1)$, hence $\frac{n_1\hat{\sigma_1}^2}{\sigma_1^2} \sim \chi_{n1}^2$.\\
