@@ -13,7 +13,7 @@
 
 
 \begin{document}
-\title{Problem Set 5}
+\title{Problem Set 6}
 \author{Hoang Nguyen, Huy Nguyen}
 \maketitle
     
@@ -23,20 +23,20 @@ Because $X_1, X_2,...X_n$ follow exponential, hence $\mathbb{E}[X]=\frac{1}{\lam
 From CTT, we know: $\frac{\bar{X_n-\frac{1}{\lambda}}}{\frac{1}{\lambda}} \sim N(0,1)$.\\
 Under $H_0$: $\frac{\bar{X_n-\frac{1}{\lambda_0}}}{\frac{1}{\lambda_0}} \sim N(0,1)$. Now we have test statistic: $T= |\frac{\bar{X_n-\frac{1}{\lambda_0}}}{\frac{1}{\lambda_0}}|$.\\
 With asymptotic level $\alpha$, $\mathbb{P}[T>c]=\alpha$, hence $c=1-\phi^{-1}(\frac{\alpha}{2})$\\
-Conclusion: If $T>c$, we reject $H_0$. Otherwise, we are fail to reject $H_0$.
+Conclusion: If $T>c$, we reject $H_0$. Otherwise, we fail to reject $H_0$.
 
 
 \item 2. 
 Let denote $\hat{\lambda}=argmax_{\theta \in \{0; +\infty\}} l(\theta)$ and $\hat{\lambda^c}=argmax_{\theta \in H_0} l(\theta)$ where $l(\theta)$ is likehood funtion of $\theta$. Using Likelood ratio test, we have test stattistic: $T=2\Big(l(\hat{\lambda})-l(\hat{\lambda^c})\Big)$. \\
 The difference in the number of parameters for the two models is 1 because we only consider paramer $\lambda \in \mathbb{R}$. Hence $T \sim \chi_{1}^{2}$. With asymptotic level test $\alpha$, $\mathbb{P}[T>c]=\alpha$, hence c is the $(1-\alpha)$-quantile of $\chi^{2}_{1}$.
-Conclusion: If $T>c$, we reject $H_0$. Otherwise, we are fail to reject $H_0$.
+Conclusion: If $T>c$, we reject $H_0$. Otherwise, we fail to reject $H_0$.
 
 \item 3.
 a) Because $X_1, X_2,...X_n$ follow exponential, hence $\l(\lambda)=nln(\lambda)- \lambda \sum_{i=1}^{n}X_i$. Because there are 50 consecutive calls and these observations have average value is 0.98, hence $ \sum_{i=1}^{n}X_i=0.98x50=49$.\\
 Now we have log-likelihood function $l(\lambda)=50ln(\lambda)- 49\lambda$. Taking derivate respect to $\lambda$, we get $l'(\lambda)= \frac{50}{\lambda}-49$. Setting this equals to zeros we get $\hat{\lambda}=\frac{50}{49}$, hence $l(\hat{\lambda})=-48.989$\\
 Because $l'(\lambda) > 0$ for all $\theta$ under $H_0$, hence $\hat{\lambda^c}=1 => l(\hat{\lambda^c})=-49$\\
 Based on previous questions, we have $T=2\Big(l(\hat{\lambda})-l(\hat{\lambda^c})\Big)= 2(-48.989+49)=0.022$. With asymptotic level test $\alpha=0.05$, we get $c=3.814$\\
-Because $T=0.022<3.814$, hence we are fail to reject null hypothesis.\\
+Because $T=0.022<3.814$, hence we fail to reject null hypothesis.\\
 b) $p-value=\mathbb{P}[\chi_{1}^{2}>0.022]=0.8829$
 
 
@@ -108,7 +108,62 @@ a)\\
 $\bullet$ By Markov's inequality:
 \[ \mathbb{P}\Big[|\hat{p} - p| > \epsilon \Big] \leqslant \mathbb{P}\Big[\hat{p} - p > \epsilon \Big] \leqslant \frac{\mathbb{E}[\hat{p}-p]}{\epsilon} = \frac{\mathbb{E}[\hat{p}]- p}{\epsilon}=0 \]
 Hence, $\hat{p}$ is consistent estimators of $p$.\\
-Using similar method, we get $\hat{q}$ and $\hat{r}$ are consistent estimator of q and r, respectively.
+Using similar method, we get $\hat{q}$ and $\hat{r}$ are consistent estimator of q and r, respectively.\\
+b)\\
+From CTT, we have $\sqrt{n}\frac{\bar{X_n}-p}{\sqrt{p(1-p)}} \sim N(0,1) $. Hence, $\sqrt{n}(\hat{p}-p) \sim N(0, p(1-p))$. Using similar method, we get $\sqrt{n}(\hat{q}-q) \sim N(0, q(1-q))$ and $\sqrt{n}(\hat{r}-r) \sim N(0, r(1-r))$.\\
+Hence, $(\hat{p}, \hat{q}, \hat{r})$ is asymptotically normal with covariance matrix 
+\[ \Sigma
+=
+\begin{bmatrix}
+    p(1-p) & 0 & 0\\
+    0 & q(1-q) & 0\\
+    0 & 0 & r(1-r)
+\end{bmatrix} 
+ \]
+c)\\
+From previous question we have: $\sqrt{n}(\hat{\theta} -\theta ) \sim N(0, \Sigma)$ where $\theta=\begin{bmatrix}
+    r & p & q
+    
+\end{bmatrix}^{T}  $ and $\Sigma=\begin{bmatrix}
+    r(1-r) & 0 & 0\\
+    0 & p(1-p) & 0\\
+    0 & 0 & q(1-q)
+    
+\end{bmatrix}  $\\
+Let's denote $\theta= \begin{bmatrix}
+    r & p & q
+    
+\end{bmatrix}^{T} $, $\hat{\theta}= \begin{bmatrix}
+    \hat{r} & \hat{p} & \hat{q}
+    
+\end{bmatrix}^{T} $ and function $\mathbb{R}^3 \rightarrow \mathbb{R}: f(\theta)=\theta_1-\theta_2\theta_3$.\\
+We have $\sqrt{n}(\hat{r}-\hat{p}\hat{q})=\sqrt{n}(f(\hat{\theta})-f(\theta))$ where $\theta=\begin{bmatrix}
+    r & p & q
+    
+\end{bmatrix}^{T}  $. Using Delta-method we have:
+\[ \sqrt{n}(f(\hat{\theta})-f(\theta)) \sim N(0, \nabla_{\theta}^{T} \Sigma \nabla_{\theta} ) \]
+Where $\nabla_{\theta}=\frac{\partial f}{\partial \theta}(\theta)$ and $\Sigma$ is the covariance matrix of asymptotically normal distributiion of $\theta$. With  $\theta=\begin{bmatrix}
+    r & p & q
+    
+\end{bmatrix}^{T}  $ we have: \[ \nabla_{\theta}= \frac{\partial f}{\partial \theta}(\theta)= 
+\theta=\begin{bmatrix}
+    1 & -q & -p
+    
+\end{bmatrix}^{T}
+  \]
+Hence $V=\nabla_{\theta}^{T} \Sigma \nabla_{\theta}=\begin{bmatrix}
+    1 & -q & -p
+    
+\end{bmatrix} \begin{bmatrix}
+    r(1-r) & 0 & 0\\
+    0 & p(1-p) & 0\\
+    0 & 0 & q(1-q)
+    
+\end{bmatrix}  \begin{bmatrix}
+    1 \\
+    -q\\
+    -p\\
+\end{bmatrix}=$.
 
 \end{problem}
 
