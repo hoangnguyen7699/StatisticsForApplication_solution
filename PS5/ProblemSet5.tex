@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
- 
+\usepackage{hyperref}
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
  
@@ -91,39 +91,33 @@ p-value=$\mathbb{P}[|N(0,1)|>1.295]=1-\mathbb{P}[|N(0,1)| \leqslant 1.295]=1-(2\
 \end{problem}
 
 \begin{problem}{3}
-\item 1.
-By central limit theorem (CLT), we have: 
-\[ \frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma} \thicksim \text( N(0,1))\]
-Hence, $(a_{n})_{n \in \mathbb{N}}$ can be $\frac{\sqrt{n}}{\sigma}$ and $(b_{n})_{n \in \mathbb{N}}$ can be $\mu$.
-
-\item 2.
-We have: $Z \backsim N(0,1)$\\
-Hence, $\mathbb{P}[|Z| \leqslant t]=\mathbb{P}[-t\leqslant Z \leqslant t]= \phi(t)-\phi(-t)= \phi(t)-(1-\phi(t))=2\phi(t)-1= 2\mathbb{P}[Z \leqslant t]-1$.
-\item 3.
-From part 1 we get: 
-\[ \frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma} \thicksim \text( N(0,1))\]
-from part 2 we get:
-\[ \mathbb{P}[|Z| \leqslant t]=2\mathbb{P}[Z \leqslant t]-1\]
-Substitution:
-\[ \mathbb{P}\Big[|\frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma}| \leqslant t\Big]=2\mathbb{P}[Z \leqslant t]-1\]
-We have $2\mathbb{P}[Z \leqslant t]-1=0.95 \Rightarrow t=\phi^{-1}(\frac{0.95+1}{2})=1.96$. \\
-Hence, 
-\[ \mathbb{P}\Big[|\frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma}| \leqslant 1.96\Big]= 0.95\]
-
-\[  \mathbb{P}\Big[-\frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma} \leqslant 1.96 \leqslant \frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma}\Big]= 0.95\]
-Because $X_i$ is Poisson random variable with parameter $\lambda$, so $ \mu=\lambda$ and $\sigma= \sqrt{\lambda}$\\
-We get:
-\[  \mathbb{P}\Big[-\frac{\sqrt{n}(\bar{X_i}-\lambda)}{\sqrt{\lambda}} \leqslant 1.96 \leqslant \frac{\sqrt{n}(\bar{X_i}-\lambda)}{\sqrt{\lambda}}\Big]= 0.95\]
-
-\[ \mathbb{P}\Big[\bar{X_i}- \frac{1.96\sqrt{\lambda}}{\sqrt{n}} \leqslant \lambda \leqslant \bar{X_i}+ \frac{1.96\sqrt{\lambda}}{\sqrt{n}}  \Big] =0.95\]
-
-We know: $\bar{X_i} \xrightarrow{P} \mathbb{E}[\bar{X_i}]=\lambda$\\
-Hence, 
-\[ \mathbb{P}\Big[\bar{X_i}- \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}} \leqslant \lambda \leqslant \bar{X_i}+ \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}}  \Big] \geqslant 0.95\]
-$\Rightarrow$ L=[$\bar{X_i}- \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}}, \bar{X_i}+ \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}}$] 
-\item 4.
-We can easily see min($X_i$)$\leqslant \bar{X_i} \leqslant$ max($X_i$). Hence, a new interval can be: 
-\[L=[min(X_i)- \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}}, max(X_i)+ \frac{1.96\sqrt{\bar{X_i}}}{\sqrt{n}}]\]
+Let denote the function $\mathbb{R}^{2} \longrightarrow \mathbb{R}: g(\mu, \sigma^2)=\mu -\sqrt{\sigma^2}$. We have:
+\[ \frac{\partial g}{\partial \mu}=1 \]
+\[ \frac{\partial}{\partial \sigma^{2}}= -\frac{1}{2\sigma}\]
+Let denote $\hat{\mu}=\bar{X_n}$ and $\hat{\sigma}^{2}=\frac{1}{n}\sum(X_i-\hat{\mu})^{2}$. Hence, by \href{https://alecospapadopoulos.files.wordpress.com/2016/03/asympt-distr-of-sample-variance-dichotomous-rvs-technical-report.pdf}{this result}: 
+\[ \sqrt{n}(\hat{\mu}-\mu) \longrightarrow N(0, \sigma^2).\]
+\[ \sqrt{n}(\hat{\sigma^2}- \sigma^2) \longrightarrow N(0, 2\sigma^{4}) \]
+Hence $(\hat{\mu}, \hat{\sigma^2})$ is asymptotically normal with covariance matrix:
+\[\sum= 
+\begin{bmatrix}
+    \sigma^2 & 0\\
+    0 & 2\sigma^4
+\end{bmatrix}
+ \] 
+Using Delta method we have: 
+\[ \sqrt{n}(g(\hat{\mu}, \hat{\sigma}^2) - g(\mu, \sigma^2)) \longrightarrow N(0, \nabla_{\mu, \sigma^2}^{T} \Sigma \nabla_{\mu, \sigma^2} ))\]
+Where $\nabla_{\mu, \sigma^2}= \nabla g(\mu, \sigma^2)=[1 -\frac{1}{2\sigma}]^{T}$. Hence $\nabla_{\mu, \sigma^2}^{T} \Sigma \nabla_{\mu, \sigma^2}=[1 -\frac{1}{2\sigma}]\begin{bmatrix}
+    \sigma^2 & 0\\
+    0 & 2\sigma^4
+\end{bmatrix} 
+\begin{bmatrix}
+    1 \\
+     -\frac{1}{2\sigma}
+\end{bmatrix}=\frac{3}{2}\sigma^2$.\\
+Hence $ \sqrt{n}(g(\hat{\mu}, \hat{\sigma}^2) - g(\mu, \sigma^2)) \longrightarrow N(0, \frac{3}{2}\sigma^2 )) $ which equivalents to $ \sqrt{n}\frac{\sqrt{\frac{2}{3}}}{\sigma}(g(\hat{\mu}, \hat{\sigma}^2) - g(\mu, \sigma^2)) \longrightarrow N(0, 1)$. Computing second order Delta method, we have:
+\[ n g(\hat{\mu}, \hat{\sigma}^2)^{T} \frac{2}{3\sigma^2} g(\hat{\mu}, \hat{\sigma}^2)  \longrightarrow \chi_{1}^{2}\]
+Let denote c is $(1-\alpha)$-quantile of Kai-square with 1 degree of fredom. Because this is one-sided test statistic, if $T>c$ we reject null hypothesis, othewise, we fail to reject null hypothesis.\\
+In our case, under null hypothesis, $T=n g(\hat{\mu}, \hat{\sigma}^2)^{T} \frac{2}{3\sigma^2} g(\hat{\mu}, \hat{\sigma}^2) >  100 \times (2.41-\sqrt{5.2}) \times \frac{2}{3\times 5.2} \times (2.41-\sqrt{5.2})= 0.215 $ and $c=3.841$. Since $$
 \end{problem}
 \begin{problem}{4}
 We have $X_i$ is IID. Hence, $\mathbb{P}(M_n \leqslant t)=\prod_{n=1}^{n}\mathbb{P}(X_i\leqslant t).$\\
