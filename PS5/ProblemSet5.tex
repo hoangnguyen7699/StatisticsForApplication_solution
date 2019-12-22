@@ -117,69 +117,11 @@ Where $\nabla_{\mu, \sigma^2}= \nabla g(\mu, \sigma^2)=[1 -\frac{1}{2\sigma}]^{T
 Hence $ \sqrt{n}(g(\hat{\mu}, \hat{\sigma}^2) - g(\mu, \sigma^2)) \longrightarrow N(0, \frac{3}{2}\sigma^2 )) $ which equivalents to $ \sqrt{n}\frac{\sqrt{\frac{2}{3}}}{\sigma}(g(\hat{\mu}, \hat{\sigma}^2) - g(\mu, \sigma^2)) \longrightarrow N(0, 1)$. Computing second order Delta method, we have:
 \[ n g(\hat{\mu}, \hat{\sigma}^2)^{T} \frac{2}{3\sigma^2} g(\hat{\mu}, \hat{\sigma}^2)  \longrightarrow \chi_{1}^{2}\]
 Let denote c is $(1-\alpha)$-quantile of Kai-square with 1 degree of fredom. Because this is one-sided test statistic, if $T>c$ we reject null hypothesis, othewise, we fail to reject null hypothesis.\\
-In our case, under null hypothesis, $T=n g(\hat{\mu}, \hat{\sigma}^2)^{T} \frac{2}{3\sigma^2} g(\hat{\mu}, \hat{\sigma}^2) >  100 \times (2.41-\sqrt{5.2}) \times \frac{2}{3\times 5.2} \times (2.41-\sqrt{5.2})= 0.215 $ and $c=3.841$. Since $$
+Consider null hypothesis $H_0:$ $\mu = \sigma$\\
+In our case, under null hypothesis, $T=n g(\hat{\mu}, \hat{\sigma}^2)^{T} \frac{2}{3\sigma^2} g(\hat{\mu}, \hat{\sigma}^2) =  100 \times (2.41-\sqrt{5.2}) \times \frac{2}{3\times 5.2} \times (2.41-\sqrt{5.2})= 0.215 $ and $c=3.841$. Since $T<c$, we fail to reject $H_0$: $\mu = \sigma$. Hence, we also fail to reject $H_0$: $\mu<\sigma$.\\
+If the sample size is n = 100, the sample average is 3.28 and the sample variance is 15.95, by similar method, we have $T=2.13$. At level 0.05 we know c=3.841, hence $T<c$ => we fail to reject null hypothesis\\
+At level 0.1, we know $c=2.706$. Since $T<c$, we still fail to reject null hypothesis. 
+
 \end{problem}
-\begin{problem}{4}
-We have $X_i$ is IID. Hence, $\mathbb{P}(M_n \leqslant t)=\prod_{n=1}^{n}\mathbb{P}(X_i\leqslant t).$\\
-By uniform distribution, the CDF of $M_n$:
-\[ \mathbb{P}(M_n \leqslant t)=F(t)=\Big(\frac{t}{\theta}\Big)^n \]
-Hence, the PDF of $M_n$ is:
-\[f(t)=\frac{dF}{dt}=n\theta^{-n}t^{n-1} \]
-We can easily get:
-\[\mathbb{E}[M_n]= \int_{0}^{\theta} tn\theta^{-n}t^{n-1}dt=\frac{n}{n+1}\theta \rightarrow \theta \textbf{ as n}\rightarrow \infty \]
-By Markov's Inequality:
-\[ \mathbb{P}\Big[ | M_n -\theta|> \epsilon \Big]\leqslant \mathbb{P}[M_n-\theta>\epsilon] \leqslant \frac{\mathbb{E}[M_n-\theta]}{\epsilon}=\frac{\mathbb{E}[M_n]-\theta}{\epsilon} \rightarrow 0\]
-Hence, $M_n$ converages in probility to $\theta$.
 
-\item 2.
-From part 1 we get: $M_n$: $\mathbb{P}[M_n \leqslant t]=\Big(\frac{t}{\theta}\Big)^n$. Hence, CDF of $n(1-\frac{M_n}{\theta})$ is:
-\[ P\Big[n(1-\frac{M_n}{\theta})\leqslant t\Big]=\mathbb{P}\Big[M_n \geqslant \frac{(n-t)\theta}{n} \Big] =1-\Big(\frac{n-t}{n}\Big)^{n} \rightarrow 1- e^{-t} \textbf{ as n}  \rightarrow \infty\]
-
-Hence, $n(1-\frac{M_n}{\theta})$ converages in distribution to an exponential random variable with parameter 1.
-\item 3.
-Let A is an exponential random variable with parameter 1. Because $n(1-\frac{M_n}{\theta})$ converages in distribution to X, we have:
-\[\mathbb{P}\Big[ n(1-\frac{M_n}{\theta}) \leqslant t\Big] \rightarrow \mathbb{P}[X\leqslant t]= 1-e^{-t} \]
-$1-e^{-t}=0.95 \Rightarrow t=3$. We have:
-\[ \mathbb{P}\Big[ n(1-\frac{M_n}{\theta}) \leqslant 3\Big] \rightarrow 0.95\]
-which is:
-\[ \mathbb{P}\Big[ \theta \leqslant \frac{nM_n}{n-3}\Big] \rightarrow 0.95\]
-On the other hand, we always have $\theta \geqslant M_n$ (uniform distribution). Hence, we get: 
-\[ \mathbb{P}\Big[M_n \leqslant \theta \leqslant \frac{nM_n}{n-3}\Big] \rightarrow 0.95 \textbf{ as n} \rightarrow \infty\]
-We conclude $L=\Big[M_n, \frac{nM_n}{n-3} \Big]=\Big[ M_n, M_n+ \frac{3M_n}{n-3} \Big]$.
-\item 4.
-$bias(M_n)=\mathbb{M_n}-\theta= \frac{n}{n+1}\theta -\theta \neq 0$. Hence, $M_n$ is biased.
-
-As described in the doc, $\boldsymbol{y}$ is a one-hot vector with a 1 for the true outside word $o$, that means $y_i$ is 1 if and only if $i == o$. so the proof could be below:
-<!-- $ - \sum_{w\in Vocab}y_w\log(\hat{y}_o) = $ -->
-
-$\begin{aligned}
-    - \sum_{w\in Vocab}y_w\log(\hat{y}_w) &= - [y_1\log(\hat{y}_1) + \cdots + y_o\log(\hat{y}_o) + \cdots + y_w\log(\hat{y}_w)] \\
-    & = - y_o\log(\hat{y}_o) \\
-    & = -\log(\hat{y}_o) \\
-    & = -\log \mathrm{P}(O = o | C = c)
-\end{aligned}$
-
-**(b)** we know this deravatives:
-$$
-\because J = CE(y, \hat{y}) \\
-\hat{y} = softmax(\theta)\\
-\therefore \frac{\partial J}{\partial \theta} = (\hat{y} - y)^T
-$$
-
-$y$ is a column vector in the above equation. So, we can use chain rules to solve the deravitive:
-
-$$\begin{aligned}
-\frac{\partial J}{\partial v_c} &= \frac{\partial J}{\partial \theta} \frac{\partial \theta}{\partial v_c} \\
-&= (\hat{y} - y) \frac{\partial U^Tv_c}{\partial v_c} \\
-&= U^T(\hat{y} - y)^T
-\end{aligned}$$
-
-**(c)**
-similar to the equation above.
-$$\begin{aligned}
-\frac{\partial J}{\partial v_c} &= \frac{\partial J}{\partial \theta} \frac{\partial \theta}{\partial U} \\
-&= (\hat{y} - y) \frac{\partial U^Tv_c}{\partial U} \\
-&= v_c(\hat{y} - y)^T
-\end{aligned}$$
-\end{problem}
 \end{document}
