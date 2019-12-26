@@ -19,28 +19,20 @@
 
 \begin{problem}{1}
 
-\item 1\\
-
-We have :\\
-
-
+\item 1.
+We have :
 \[\ell_n=\sum_{i=1}^{n}(\log \theta + \theta\log\tau - (\theta+1)\log X_i) \mathbf{1}(X_i \geqslant \tau)\]
 \[\Rightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(\frac{1}{\theta}+ \log \tau-\log X_i) \mathbf{1}(X_i \geqslant \tau)=0\]
 \[\Leftrightarrow \theta= \frac{\sum_{i=1}^{n}(\mathbf{1}(X_i \geqslant \tau))}{\sum_{i=1}^{n}(\log X_i-\log \tau)\mathbf{1}(X_i \geqslant \tau)}\]
-
-\item 3\\
+\item 3.
 \[\ell_n=\sum_{i=1}^{n}(\frac{1}{2}\log \theta+(\sqrt{\theta}-1)\log X_i)\mathbf{1}(0 \leqslant X_i \leqslant1)\]
 \[\Rightarrow \frac{\partial \ell_n}{\partial \theta}=(\frac{1}{2\theta}+\frac{\log X_i}{2\sqrt{\theta}})\mathbf{1}(0 \leqslant X_i \leqslant1)=0\]
 \[\Leftrightarrow \theta=\Big(\frac{\sum_{i=1}^{n}1}{\sum_{i=1}^{n}\log X_i}\Big)^2\]
-
-
-\item 4\\
+\item 4.
 \[\ell_n=\sum_{i=1}^{n}(\log X_i-2\log \theta-\frac{{X_i}^2}{2\theta^2})\mathbf{1}(X_i \geqslant 0)\]
 \[\Leftrightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(-\frac{2}{\theta}+\frac{{X_i}^2}{\theta^3})\mathbf{1}(X_i \geqslant 0)=0\]
 \[\Leftrightarrow \theta=\frac{\sum_{i=1}^{n}(X_i)\mathbf{1}(X_i \geqslant 0)}{\sum_{i=1}^{n}\sqrt{2}\mathbf{1}(X_i \geqslant 0)}\]
-
-
-\item 5\\
+\item 5.
 \[\ell_n=\sum_{i=1}^{n}(\log \theta+ \log \tau+(\tau-1)\log X_i-\theta{X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)\]
 \[\Leftrightarrow \frac{\partial \ell_n}{\partial \theta}=\sum_{i=1}^{n}(\frac{1}{\theta}-{X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)\]
 \[\Leftrightarrow \theta=\frac{\sum_{i=1}^{n} 1\mathbf{1}(X_i \geqslant 0) }{\sum_{i=1}^{n} ({X_i}^{\tau})\mathbf{1}(X_i \geqslant 0)}\]
@@ -52,10 +44,9 @@ We have :\\
 \begin{problem}{2}
 
 We have :\\
-
 \[\mathcal{L}(\mu, \sigma)=\prod_{i=1}^n\Big(\frac{1}{\sigma}\exp({-\frac{1}{2\sigma^2}(X_i-\mu)^2})\Big)\]
 \[\ell_n=\log \mathcal{L}(\mu, \sigma)=\sum_{i=1}^n\Big( -\log\sigma-\frac{1}{2\sigma^2}(X_i-\mu)^2\Big)\]
-\[=\sum_{i=1}^n\Big(-\log\sigma -\frac{1}{2\sigma^2}(X_i-\bar{X}+\bar{X}-\mu)^2\Big)\]
+\[=\sum_{i=1}^n\Big(-\log\sigma -\frac{1}{2\sigma^2}(X_i-\bar{X_n}+\bar{X_n}-\mu)^2\Big)\]
 \[=\sum_{i=1}^n\Big(-\log\sigma -\frac{1}{2\sigma^2}\Big((X_i-\bar{X})^2+2(X_i-\bar{X})(\bar{X}-\mu) +(\bar{X}-\mu)^2\Big)\Big)\]
 \[-n\log\sigma - \frac{1}{2\sigma^2}\Big( \sum_{i=1}^n(X_i-\bar{X})^2+2(\bar{X}-\mu)\sum_{i=1}^n(X_i-\bar{X})+n(\bar{X}-\mu)^2\Big)\]
 
@@ -63,17 +54,49 @@ Because $\sum_{i=1}^n(X_i-\bar{X}=0)$, we get : \\
 \[\ell_n=-n\log\sigma -\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{2\sigma^2}-\frac{n(\bar{X}-\mu)}{2\sigma^2}\]
 
 \[\Rightarrow \begin{cases} \frac{\partial \ell_n}{\partial \mu}=\frac{n(\bar{X
-}-\mu)}{\sigma^2}=0\\ \frac{\partial \ell_n}{\partial \sigma}=\frac{-n}{\sigma}+\frac{1}{\sigma^3}\Big( \sum_{i=n}^n(X_i-\bar{X})^2+n(\bar{X}-\mu)^2\Big)=0 \end{cases}\]
-\[\Leftrightarrow \begin{cases} \mu=\bar{X}\\ \sigma^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}\end{cases}\]
+}-\mu)}{\sigma^2}=0\\ \frac{\partial \ell_n}{\partial \sigma}=\frac{-n}{\sigma}+\frac{1}{\sigma^3}\Big( \sum_{i=n}^n(X_i-\bar{X_n})^2+n(\bar{X_n}-\mu)^2\Big)=0 \end{cases}\]
+\[\Leftrightarrow \begin{cases} \mu=\bar{X_n}\\ \sigma^2=\frac{\sum_{i=1}^n(X_i-\bar{X_n})^2}{n}\end{cases}\]
 
 Prove this this is consitent: \\
 
-To do this, we need to prove bias $\rightarrow$ 0 and $\mathbf{V}(\mu, \sigma^2) \rightarrow 0$ as n $\rightarrow \infty$, which means that prove $\mathbb{E}[\bar{X}]= \mu$ and $\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}]=0$
+To do this, we need to prove bias $\rightarrow$ 0 and $se \rightarrow 0$ as n $\rightarrow \infty$.\\
+$\bullet$ Prove $\mu_{MLE}$ is consistent:
+$\mathbb{E}[\bar{X_n}]=\mathbb{E}[\frac{1}{n}\sum_{i=1}^{n}X_i]=\frac{1}{n}\sum_{i=1}^{n}\mathbb{E}[X_i]=\frac{1}{n}\sum_{i=1}^{n}\mu=\mu$. Hence, $bias(\mu_{MLE})=\mathbb{E}[\mu_{MLE}]-\mu=\mathbb{E}[\bar{X_n}]-\mu=0$. (1)\\
+$\mathbb{V}[\bar{X_n}]=\mathbb{V}[\frac{1}{n}\sum_{i=1}^{n}X_i]=\frac{1}{n^2}\mathbb{V}[\sum_{i=1}^{n}X_i]=\frac{\sigma^2}{n} \longrightarrow 0$ as $n \longrightarrow \infty$. Hence, $se(\mu_{MLE})=se(\bar{X_n})=\sqrt{\mathbb{V}[\bar{X_n}]} \longrightarrow 0$ as $n \longrightarrow \infty$. (2)\\
+Using (1) and (2), we conclude that $\mu_{MLE}$ is consistent.\\
+$\bullet$ Prove $\sigma_{MLE}^2$ is consistent:\\
+We have $\mathbb{E}[\sigma_{MLE}^2]=\mathbb{E}\Big[\sum_{i=1}^{n}\frac{(X_i-\bar{X_n})^2}{n} \Big]\Rightarrow n\mathbb{E}[\sigma_{MLE}^2]=\mathbb{E}\Big[\sum_{i=1}^{n}(X_i-\bar{X_n})^2 \Big]$\\
+\[n\mathbb{E}[\sigma_{MLE}^2]=\mathbb{E}\Big[\sum_{i=1}^{n}(X_i-\bar{X_n})^2 \Big]=\mathbb{E}\Big[\sum_{i=1}^{n}((X_i-\mu)+(\mu+\bar{X_n}))^2 \Big] \]
+\[=\mathbb{E}\Big[ \sum_{i=1}^{n}(X_i-\mu)^2 + \sum_{i=1}^{n}(\mu-\bar{X_n})^2 + 2\sum_{i=1}^{n}(X_i-\mu)(\mu-\bar{X_n}) \Big] \]
+\[=\mathbb{E}\Big[ \sum_{i=1}^{n}(X_i-\mu)^2 +n(\mu-\bar{X_n})^2 + 2(\mu-\bar{X_n})\sum_{i=1}^{n}(X_i-\mu) \Big] \]
+\[=\mathbb{E}\Big[ \sum_{i=1}^{n}(X_i-\mu)^2 +n(\mu-\bar{X_n})^2 +2(\mu-\bar{X_n})n(\bar{X_n}-\mu) \Big] \]
+\[=\mathbb{E}\Big[\sum_{i=1}^{n}(X_i-\mu)^2-n(\mu-\bar{X_n})^2  \Big]=\sum_{i=1}^{n}\mathbb{E}[(X_i-\mu)^2]-n\mathbb{E}[(\mu-\bar{X_n})^2] \]
+\[=n\sigma^2-n\mathbb{V}[\bar{X_n}]=n\sigma^2-n\frac{\sigma^2}{n}=n\sigma^2-\sigma^2=(n-1)\sigma^2 \]
+So, $\mathbb{E}[\sigma_{MLE}^2]=\frac{n-1}{n}\sigma^2 \longrightarrow 0$ as $n \longrightarrow \infty$. (3)\\
+We have: $\frac{n\sigma_{MLE}^{2}}{\sigma^2} \sim \chi_{n-1}^2$. Hence $\mathbb{V}[\frac{n\sigma_{MLE}^{2}}{\sigma^2}]=\mathbb{V}[\chi_{n-1}^2]=2(n-1)$, which equivalents to $\mathbb{V}[\sigma_{MLE}^2]=\frac{2(n-1)\sigma^4}{n^2}$. This actually tends to 0 as n tends to infinity. (4)\\
+Using (3) and (4), we conclude that  $\sigma_{MLE}^2$ is consistent.
 
-\[\mathbb{E}[\bar{X}]=\mathbb{E}[\frac{\sum_{i=1}^n X_i}{n}]=\frac{1}{n}\sum_{i=1}^n\mathbb{E}[X_i]=\frac{n\mu}{n}=\mu\]
-\[\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}]=\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\mu+\mu-\bar{X})^2}{n}]=\mathbb{E}[\frac{\sum_{i=1}^n(X_i-\mu)^2+2(\mu-\bar{X})n(\bar{X}-\mu)+n(\mu-\bar{X})^2}{n}]\]
-\[= \mathbb{E}\Big[\frac{\sum_{i=1}^n(X_i-\mu)^2-n(\mu-\bar{X})^2}{n}\Big]=\frac{\sigma^2-n\frac{\sigma^2}{n}}{n}=0\]
 
+
+
+\end{problem}
+\begin{problem}{3}
+\item 1.
+We have: $KL(N(a, \sigma^2), N(b, \sigma^2))=\mathbb{E}[N(x|a, \sigma^2)]-\mathbb{E}[N(x| b, \sigma^2)]=a-b$.\\
+\item 2.
+We have: $KL(Ber(a), Ber(b))=\mathbb{E}[Ber(x|a)]-\mathbb{E}[Ber(x| b)]=a-b$.\\
+
+\end{problem}
+
+
+\begin{problem}{4}
+\item 1.
+We have: $TV(Uni(0,s), Uni(0,t))=\frac{1}{2}\int_{0}^{s}|\frac{1}{s}-\frac{1}{t}|dx + \frac{1}{2}\int_{s}^{t}|-\frac{1}{t}|dx=\frac{t-s}{t}$.\\
+\item 2.
+We have: $TV(Ber(p), Ber(q))=\frac{1}{2}\sum_{i=0}^{1}|Ber(i|p)-Ber(i|q)|=\frac{1}{2}(|p-q|+|1-p-(1-q)|)=|p-q|$.\\
+\item 3.
+From previous question, we get: $TV(Ber(\bar{X_n}), Ber(p))=|\bar{X_n}-p|$. On the other hand, we know $\bar{X_n}$ converges to $p$ in probability because $\mathbb{P}[|\bar{X_n}-p|>\epsilon] \longrightarrow 0$ (Law of large number). Hence, $Ber(\bar{X_n})$ and $Ber(p)$ converges to zero in probability.
+\item 4. I wonder what Dirac distribution is??
 \end{problem}
 
 \end{document}

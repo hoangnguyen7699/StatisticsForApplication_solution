@@ -163,7 +163,21 @@ Hence $V=\nabla_{\theta}^{T} \Sigma \nabla_{\theta}=\begin{bmatrix}
     1 \\
     -q\\
     -p\\
-\end{bmatrix}=$.
+\end{bmatrix}=$.\\
+
+Let X, Y be two Bernoulli random variables and denote by $p=\mathbb{P}[X=1]$, $q=\mathbb{P}[Y=1]$ and $r=\mathbb{P}[X=1, Y=1]$.\\
+1. Prove that X and Y are independent if and only if $r=pq$.
+2. Let $(X_1, Y_1),...,(X_n, Y_n)$ be a sample of n i.i.d copies of $(X,Y)$. Based on this sample, we want to test whether X and Y are independent, i.e, where ther $r=pq$.\\
+a) Define $\hat{p}=\frac{1}{n}\sum_{i=1}^{n}X_i$, $\hat{q}=\frac{1}{n}\sum_{i=1}^{n}Y_i$ and $\hat{r}=\frac{1}{n}\sum_{i=1}^{n}X_{i}Y_{i}$. Prrove taht these test are, respectively, consistent estimators of p, q and r.\\
+b) Show that the vector $(\hat{p}, \hat{q}, \hat{r})$ is asymptotically normal and find the asymptotic covariance matrix.\\
+c) Using the previous question combined with the Delta-method, prove that: 
+\[\sqrt{n}(\hat{r}- \hat{p}\hat{q}-(r-pq)) \longrightarrow N(0, V) \]
+where V depends on p,q and r.\\
+d) Consider the following hypotheses:\\
+$H_0$: "X and Y are independent" vs. $H_1$: "X and Y are not independent".\\
+Assuming that $H_0$ is true, show that $V=pq(1-p)(1-q)$ and propose a consistent estimator of V.\\
+e) Using last two questions, propose a test with asymptotic $\alpha$, for any $\alpha \in (0,1)$.
+
 
 \end{problem}
 
