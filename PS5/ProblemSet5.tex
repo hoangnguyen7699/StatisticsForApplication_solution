@@ -12,14 +12,23 @@
 
 
 \begin{document}
-\title{Problem Set 4}
+\title{Problem Set 5}
 \author{Hoang Nguyen, Huy Nguyen}
 \maketitle
     
 \begin{problem}{1}
 \item 1.
-We have the log-likelihood function: 
-\[ \]
+From exercise 3 in Problem 2, If $Z \thicksim N(0,1)$, we get: $\mathbb{P}\Big[|\frac{\sqrt{n}(\bar{X_i}-\mu)}{\sigma}| \leqslant t\Big]=2\mathbb{P}[Z \leqslant t]-1$.\\
+$X_1, X_2,...,X_n$ follow Poisson distribution. Hence, $\mathbb{E}[X_i]=\lambda$ and $\mathbb{V}[X_i]=\lambda$\\
+From CTL: $\frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}} \thicksim N(0,1)$. Hence, $\mathbb{P}\Big [ |\frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}}| \leqslant t \Big]=2\mathbb{P}\Big [ \frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}} \leqslant t \Big ]-1=1-\alpha.$\\
+Hence, $\mathbb{P}\Big [ \frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}} \leqslant t \Big ]=1- \frac{\alpha}{2}$. Therefore, $t=\phi^{-1}(1- \frac{\alpha}{2}).$\\
+We have $ = \mathbb{P}\Big [ |\frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}}| \leqslant \phi^{-1}(1- \frac{\alpha}{2}) \Big ]\rightarrow (1-\alpha)$ as n tends to infinity. This equivalent to:
+\[  \mathbb{P}\Big[-\frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}} \leqslant \phi^{-1}(1- \frac{\alpha}{2}) \leqslant \frac{\sqrt{n}(\bar{X_n}-\lambda)}{\sqrt{\lambda}}\Big] \rightarrow 1-\alpha\] 
+\[ \mathbb{P}\Big[\bar{X_n}- \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\lambda}}{\sqrt{n}} \leqslant \lambda \leqslant \bar{X_n}+ \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\lambda}}{\sqrt{n}}  \Big] \rightarrow 1- \alpha\]
+We know: $\bar{X_n} \xrightarrow{P} \mathbb{E}[\bar{X_n}]=\lambda$\\
+Hence, 
+\[ \mathbb{P}\Big[\bar{X_n}- \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\bar{X_n}}}{\sqrt{n}} \leqslant \lambda \leqslant \bar{X_n}+ \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\bar{X_i}}}{\sqrt{n}}  \Big] \geqslant 1- \alpha\]
+$\Rightarrow$ L=[$\bar{X_n}- \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\bar{X_i}}}{\sqrt{n}}, \bar{X_n}+ \frac{\phi^{-1}(1- \frac{\alpha}{2})\sqrt{\bar{X_i}}}{\sqrt{n}}$]
 
 
 \item 2. 
