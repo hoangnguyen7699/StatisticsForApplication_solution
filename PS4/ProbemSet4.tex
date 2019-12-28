@@ -1,0 +1,120 @@
+\documentclass[10pt]{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{bbold}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+\begin{document}
+\title{Problem Set 4}
+\author{Hoang Nguyen, Huy Nguyen}
+\maketitle
+    
+\begin{problem}{1}
+\item 1.
+We have the log-likelihood function:  
+\[\ell_n(p) = log(\prod_{i=1}^{n}p^{X_i}(1-p)^{1-X_i})=log(p)\sum_{i=1}^{n}X_i + log(1-p)\sum_{i=1}^{n}(1-X_i) \]
+Hence,
+\[\frac{\partial\ell_n(p)}{\partial p}=\frac{\sum_{i=1}^{n}X_i}{p} - \frac{\sum_{i=1}^{n}(1 - X_i)}{1-p} \]
+Set this equals to 0, we get: $p=\frac{1}{n}\sum_{i=1}^{n}X_i$.\\
+We have:
+\[I(\theta) =\mathbb{E}[(\frac{\partial\ell_n(p)}{\partial p})^2]=\mathbb{E}\Big[(\frac{X}{p} - \frac{1-X}{1-p})^2 \Big] = \mathbb{E}[\frac{X^2}{p^2}] - 2\mathbb{E}[\frac{X - X^2}{p(1-p)}] + \mathbb{E}[\frac{X^2-2X+1}{(1-p)^2}] \]
+From Bernoulli distribution, we know: $\mathbb{E}[X]=p$ and $\mathbb{E}[X^2]=p$. Plugging those thing to equation above, we get:
+\[ I(\theta)=\frac{p}{p^2} - 2\frac{0-0}{p(1-p)} + \frac{p-2p+1}{(1-p)^2}=\frac{1}{p(1-p)} \]
+
+\item 2. 
+We have the log-likelihood function:  
+\[\ell_n(\lambda) = log(\prod_{i=1}^{n}e^{-\lambda} \frac{\lambda^{X_i}}{X_i!})=-n\lambda -\sum_{i=1}^{n}log(X_i!) + log(\lambda)\sum_{i=1}^{n}X_i \]
+Hence,
+\[\frac{\partial\ell_n(\lambda)}{\partial \lambda}= -n + \frac{1}{\lambda}\sum_{i=1}^{n}X_i \]
+Set this equals to 0, we get: $\lambda=\frac{1}{n}\sum_{i=1}^{n}X_i$.\\
+We have: $\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}= \frac{\partial (-1 + \frac{X}{\lambda})}{\partial \lambda}=\frac{-X}{\lambda^2}$. Hence, $I(\lambda)= -\mathbb{E}[\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}]= -\mathbb{E}[-\frac{X}{\lambda^2}]=\frac{1}{\lambda}$\\
+
+
+
+\item 3. 
+We have the log-likelihood function:  
+\[\ell_n(\lambda) = log(\lambda^n e^{-\lambda \sum_{i=1}^{n} X})=nlog(\lambda)-\lambda\sum_{i=1}^{n}X_i \]
+Hence,
+\[\frac{\partial\ell_n(\lambda)}{\partial \lambda}=\frac{n}{\lambda} - \sum_{i=1}^{n}X_i \]
+Set this equals to 0, we get: $\lambda=\frac{n}{\sum_{i=1}^{n}X_i}$.\\
+We have: $\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}= \frac{\partial (\frac{1}{\lambda} - X)}{\partial \lambda}=\frac{-1}{\lambda^2}$. Hence, $I(\lambda)= -\mathbb{E}[\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}]= -\mathbb{E}[\frac{-1}{\lambda^2}]=\frac{1}{\lambda^2}$\\
+\item 4.
+We have this result from problem 2 in Problem 3: \[\begin{cases} \mu=\bar{X_n}\\ \sigma^2=\frac{\sum_{i=1}^n(X_i-\bar{X_n})^2}{n}\end{cases}\]
+Recall from problem 2 in Problem 3:
+\[ \begin{cases} \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu} = \frac{1}{\sigma^2}(X - \mu) \\\frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2} = \frac{-1}{2\sigma^2} + \frac{(x-\mu)^2}{2\sigma^4} \end{cases} \Leftrightarrow \begin{cases} \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu^2} = \frac{-1}{\sigma^2} \\ \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu \sigma^2}= \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \mu}= \frac{-2(X-\mu)}{\sigma^3} \\  \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \sigma^2} = \frac{1}{2\sigma^4} - \frac{(X-\mu)^2}{2\sigma^6} \end{cases}\]
+Hence, 
+\[ I(\mu, \sigma^2)=\mathbb{E} \begin{bmatrix}
+    \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu^2} & \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu \sigma^2}\\
+    \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \mu} & \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \sigma^2}
+\end{bmatrix} = -\mathbb{E} \begin{bmatrix}
+    -\frac{1}{\sigma^2} & \frac{-2(X-\mu)}{\sigma^3} \\
+    \frac{-2(X-\mu)}{\sigma^3} & \frac{1}{2\sigma^4} - \frac{(X-\mu)^2}{2\sigma^6}
+\end{bmatrix}= \begin{bmatrix}
+\frac{1}{\sigma^2} & 0 \\
+0 & \frac{1}{2\sigma^4}
+\end{bmatrix} \]
+\item 5.
+We have the log-likelihood function:  
+\[\ell_n(\lambda) = log(\prod_{i=1}^{n}\lambda e^{-\lambda(X_i-a)} \mathbb{1}_{x \geq a}) = \sum_{i=1}^{n}= nlog(\lambda) - \lambda \sum_{i=1}^{n}(X_i-a) +\sum_{i=1}^{n}log(\mathbb{1}_{X_i \geq a}) \]
+Hence,
+\[\frac{\partial\ell_n(\lambda)}{\partial \lambda}=  \frac{n}{\lambda} - \sum_{i=1}^{n} (X_i -a)  \]
+Set this equals to 0, we get: $\lambda=\frac{n}{\sum_{i=1}^{n}(X_i-a)}$.\\
+We have: $\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}= \frac{\partial (\frac{1}{\lambda} - (X-a))}{\partial \lambda}=\frac{-1}{\lambda^2}$. Hence, $I(\lambda)= -\mathbb{E}[\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}]= -\mathbb{E}[\frac{-1}{\lambda^2}]=\frac{1}{\lambda^2}$\\
+
+\item 6.
+We have the log-likelihood function:  
+\[\ell_n(\mu, \sigma^2) = log(\prod_{i=1}^{n}\frac{1}{X_{i}\sqrt{2\pi\sigma^2}}e^{-\frac{1}{2\sigma^2} (log(X_i) - \mu)^2})= -\frac{n}{2}log(2\pi) - \frac{n}{2}log(\sigma^2) -\sum_{i=1}^{n}log(X_{i})  -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(log(X_i)-\mu)^2 \]
+Hence,
+\[\frac{\partial\ell_n(\mu, \sigma^2)}{\partial \mu}=   \frac{1}{\sigma^2}\Big ( \sum_{i=1}^{n}log(X_i) -n\mu\Big )\]
+Set this equals to 0, we get: $\mu=\frac{1}{n}\sum_{i=1}^{n}log(X_i)$.\\
+On the other hand,
+\[\frac{\partial\ell_n(\mu, \sigma^2)}{\partial \sigma^2} = \frac{-n}{2\sigma^2}+ \frac{\sum_{i=1}^{n} (log(X_i) - \mu)^2}{2\sigma^4} \]
+Set this equals to 0, we get: $\sigma^2=\frac{1}{n}\sum_{i=1}^{n}(log(X_i)-\mu)^2$.\\
+
+We have: 
+\[ \begin{cases} \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu} = \frac{1}{\sigma^2}(log(X) - \mu) \\\frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2} = \frac{-1}{2\sigma^2} + \frac{(log(x)-\mu)^2}{2\sigma^4} \end{cases} \Leftrightarrow \begin{cases} \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu^2} = \frac{-1}{\sigma^2} \\ \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu \sigma^2}= \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \mu}= \frac{-2(log(X)-\mu)}{\sigma^3} \\  \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \sigma^2} = \frac{1}{2\sigma^4} - \frac{(log(X)-\mu)^2}{2\sigma^6} \end{cases}\]
+Hence, 
+\[ I(\mu, \sigma^2)=\mathbb{E} \begin{bmatrix}
+    \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu^2} & \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu \sigma^2}\\
+    \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \mu} & \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \sigma^2}
+\end{bmatrix} = -\mathbb{E} \begin{bmatrix}
+    -\frac{1}{\sigma^2} & \frac{-2(log(X)-\mu)}{\sigma^3} \\
+    \frac{-2(log(X)-\mu)}{\sigma^3} & \frac{1}{2\sigma^4} - \frac{(log(X)-\mu)^2}{2\sigma^6}
+\end{bmatrix}= \begin{bmatrix}
+\frac{1}{\sigma^2} & 0 \\
+0 & \frac{1}{2\sigma^4}
+\end{bmatrix} \]
+The last equation comes from the fact that $ln(X) \sim N(\mu, \sigma^2)$ because of the following reason:\\
+Let $y=log(x)$ 
+\[ f_{y}(y)=f_{x}(e^y)e^{y}=\frac{e^{y}}{e^{y}\sqrt{2\pi \sigma^2}} e^{-\frac{1}{2\sigma^2}(log(e^y)-\mu)^2}=\frac{1}{\sqrt{2\pi \sigma^2}}e^{-\frac{1}{2\sigma^2}(y-\mu)^2} \]
+Hence, $y \sim N(\mu, \sigma^2) \Longrightarrow \mathbb{E}[y]=\mathbb{E}[log(x)]=\mu \Longrightarrow \mathbb{E}[\log(x) -\mu] = 0$.
+There is an another better approach for the first part of this question (maximum likelihood). Let $y=log(x)$, we have $y\sim N(\mu, \sigma^2)$ (which was proved a few lines above). Now, We come up with question 4.\\
+
+
+
+
+
+
+
+
+
+
+
+
+\end{problem}
+
+\begin{problem}{2}
+
+
+\end{problem}
+
+
+
+\end{document}
