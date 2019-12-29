@@ -151,15 +151,23 @@ Form question 4, we have
 
 \end{problem}
 \begin{problem}{3}
-\item 1. $\mathbb{P}[X=1]=\mathbb{P}[Exp(\lambda) > z]= 1- e^{-\lambda z} $. Hence $X_{i}$'s follow Bernoulli distribution with parameter $p=1- e^{-\lambda z}$.
-\item 2. We have $\bar{X_n}=\frac{1}{n}\sum_{i=1}^{n}X_i$. By CLL, $\bar{X_n} \sim N(\mathbb{E}[X], \frac{\mathbb{V}[X]}{n})$. From question 1, we have $\mathbb{E}[X]=p=1- e^{-\lambda z}$ and $\mathbb{V}[X]=p(1-p)=e^{-\lambda z}(1- e^{-\lambda z})$. Hence, $\bar{X_n} \sim N(1- e^{-\lambda z}, \frac{e^{-\lambda z}(1- e^{-\lambda z})}{n} )$.
-\item 3. From question 3 problem 1, we have $\lambda_{MLE}=\frac{1}{\sum_{i=1}^{n}X_i}=\frac{1}{\frac{1}{n}\sum_{i=1}^{n}}=\frac{1}{\bar{X_n}}$. We already know this is actually a consistent  estimator of true $\lambda$. Hence, $f(\bar{X_n})=\frac{1}{\bar{X_n}}$ is a consistent estimator of $\lambda$.\\
+\item 1. $\mathbb{P}[X=1]=\mathbb{P}[Exp(\lambda) > z]= e^{-\lambda z} $. Hence $X_{i}$'s follow Bernoulli distribution with parameter $p=e^{-\lambda z}$.
+\item 2. We have $\bar{X_n}=\frac{1}{n}\sum_{i=1}^{n}X_i$. By CLL, $\bar{X_n} \sim N(\mathbb{E}[X], \frac{\mathbb{V}[X]}{n})$. From question 1, we have $\mathbb{E}[X]=p=e^{-\lambda z}$ and $\mathbb{V}[X]=p(1-p)=e^{-\lambda z}(1- e^{-\lambda z})$. Hence, $\bar{X_n} \sim N(e^{-\lambda z}, \frac{e^{-\lambda z}(1- e^{-\lambda z})}{n} )$.
+\item 3. From question 1 problem 1 we have $\bar{X_n}$ is a consistent estimator of $p =  e^{-\lambda z}$. Hence, $\frac{-log(\bar{X_n})}{z}$ is a consistent estimator of $\lambda$. Hence, $f(\bar{X_n})=\frac{-log(\bar{X_n})}{z}$
 
 
-\item 4. By Fisher Information and result from question 3 problem 1: 
-\[ \sqrt{n}(\lambda_{MLE} - \lambda) \xrightarrow{\text{d}} N(0, \lambda^2) \Leftrightarrow \sqrt{n}(f(\bar{X_n}) - \lambda) \xrightarrow{\text{d}} N(0, \lambda^2) \Leftrightarrow f(\bar{X_n}) \sim N(\lambda, \frac{\lambda^2}{n}) \]
+\item 4. By CLT, we have $\sqrt{n}(\bar{X_n} -p) \longrightarrow N(0, p(1-p))$\\
+On the other hand, let $f(x)=\frac{-log(x)}{z} \Rightarrow \frac{\partial f(x)}{\partial x}=\frac{-1}{zx} \Rightarrow \frac{\partial f(x)}{\partial x} (p)=\frac{-1}{zp}$.
+Using Delta-method, we know:
+\[\sqrt{n}(f(\bar{X_n}) - f(p))  \longrightarrow N(0, (\frac{-1}{zp})^2 p(1-p)) \Leftrightarrow \sqrt{n}(f(\bar{X_n}) - \frac{-log(p)}{z})  \longrightarrow N(0, \frac{1-p}{z^2p})\]
 
 \item 5.  
+Let denote $f(p)= \frac{1-p}{z^2p}$. Hence, $\frac{\partial f(p)}{\partial p}= \frac{-1}{z^2p^2} \leqslant 0  \Rightarrow argmin f(p)=1$. Hence, $e^{-\lambda z}=1 \Leftrightarrow g_{\lambda}(z)= ze^{-\lambda z}=z $
+\item 6.\\ 
+a) The statistical model is ($\mathbb{R}+$, ($Exp(\lambda))_{\lambda>0}$).\\
+b) From question 3 problem 1, we know $I_{Y}(\lambda)=\frac{1}{\lambda^2}$.\\
+c) From question 1 problem 1, we know $I_{X}(\lambda)=\frac{1}{p(1-p)}=\frac{1}{e^{-\lambda z}(1-e^{-\lambda z})}$.\\
+d) I wonder what value of threshold z is?
 
 \end{problem}
 
