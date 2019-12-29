@@ -62,11 +62,26 @@ Hence,
 \end{bmatrix} \]
 \item 5.
 We have the log-likelihood function:  
-\[\ell_n(\lambda) = log(\prod_{i=1}^{n}\lambda e^{-\lambda(X_i-a)} \mathbb{1}_{x \geq a}) = \sum_{i=1}^{n}= nlog(\lambda) - \lambda \sum_{i=1}^{n}(X_i-a) +\sum_{i=1}^{n}log(\mathbb{1}_{X_i \geq a}) \]
+\[\ell_n(\lambda, a) = log(\prod_{i=1}^{n}\lambda e^{-\lambda(X_i-a)} \mathbb{1}_{x \geq a}) = \sum_{i=1}^{n}= nlog(\lambda) - \lambda \sum_{i=1}^{n}(X_i-a) +\sum_{i=1}^{n}log(\mathbb{1}_{X_i \geq a}) \]
 Hence,
-\[\frac{\partial\ell_n(\lambda)}{\partial \lambda}=  \frac{n}{\lambda} - \sum_{i=1}^{n} (X_i -a)  \]
-Set this equals to 0, we get: $\lambda=\frac{n}{\sum_{i=1}^{n}(X_i-a)}$.\\
-We have: $\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}= \frac{\partial (\frac{1}{\lambda} - (X-a))}{\partial \lambda}=\frac{-1}{\lambda^2}$. Hence, $I(\lambda)= -\mathbb{E}[\frac{\partial^2\ell_n(\lambda)}{\partial \lambda^2}]= -\mathbb{E}[\frac{-1}{\lambda^2}]=\frac{1}{\lambda^2}$\\
+\[\frac{\partial\ell_n(\lambda, a)}{\partial a}=  n\lambda   \]
+Because $n\lambda $ for all $\lambda > 0$, $\ell_n(\lambda, a)$ is an increasing function of $a$ until $a > min(X_i)$. Hence $\ell_n(\lambda, a)$ is maximal with respect to $a$ when $a$ is made as large as possible without exceeding the minimum order statistic $\Longrightarrow a=min(X_i)$\\
+Let's denote $y=x-a$, hence $f_{y}(y)=\frac{d}{dx}(x-a)f_{x}{y}=f_{x}(y)$ which is exponential distribution.\\ 
+From question 3, we know $\lambda=\frac{n}{\sum_{i=1}^{n}Y_i}=\frac{n}{\sum_{i=1}^{n}(X_i-a)}$\\
+We have: 
+\[ \begin{cases} \frac{\partial\ell_n(\lambda, a)}{\partial \lambda} =   \frac{1}{\lambda} - (X -a) \\ \frac{\partial\ell_n(\lambda, a)}{\partial a} = \lambda   \end{cases} \Leftrightarrow \begin{cases}  \frac{\partial^2\ell_n(\lambda, a)}{\partial \lambda^2} = \frac{-1}{\lambda^2} \\ \frac{\partial^2\ell_n(\lambda, a)}{\partial \lambda a} = \frac{\partial^2\ell_n(\lambda, a)}{\partial a\lambda}= 1 \\ \frac{\partial^2\ell_n(\lambda, a)}{\partial a^2} = 0 \end{cases}\]
+Hence,
+\[ I(\lambda , a)=\mathbb{E} \begin{bmatrix}
+    \frac{\partial \ell_n(\lambda, a)}{\partial \lambda^2} & \frac{\partial \ell_n(\lambda, a)}{\partial \lambda a}\\
+    \frac{\partial \ell_n(\lambda, a)}{\partial a \lambda} & \frac{\partial \ell_n(\lambda, a)}{\partial a^2}
+\end{bmatrix} = -\mathbb{E} \begin{bmatrix}
+    -\frac{1}{\lambda^2} & 1 \\
+    1 & 0
+\end{bmatrix}= \begin{bmatrix}
+\frac{1}{\lambda^2} & 1 \\
+1 & 0
+\end{bmatrix} \]
+
 
 \item 6.
 We have the log-likelihood function:  
@@ -77,6 +92,7 @@ Set this equals to 0, we get: $\mu=\frac{1}{n}\sum_{i=1}^{n}log(X_i)$.\\
 On the other hand,
 \[\frac{\partial\ell_n(\mu, \sigma^2)}{\partial \sigma^2} = \frac{-n}{2\sigma^2}+ \frac{\sum_{i=1}^{n} (log(X_i) - \mu)^2}{2\sigma^4} \]
 Set this equals to 0, we get: $\sigma^2=\frac{1}{n}\sum_{i=1}^{n}(log(X_i)-\mu)^2$.\\
+
 
 We have: 
 \[ \begin{cases} \frac{\partial \ell_n(\mu, \sigma^2)}{\partial \mu} = \frac{1}{\sigma^2}(log(X) - \mu) \\\frac{\partial \ell_n(\mu, \sigma^2)}{\partial \sigma^2} = \frac{-1}{2\sigma^2} + \frac{(log(x)-\mu)^2}{2\sigma^4} \end{cases} \Leftrightarrow \begin{cases} \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu^2} = \frac{-1}{\sigma^2} \\ \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \mu \sigma^2}= \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \mu}= \frac{-2(log(X)-\mu)}{\sigma^3} \\  \frac{\partial^2  \ell_n(\mu, \sigma^2)}{\partial \sigma^2 \sigma^2} = \frac{1}{2\sigma^4} - \frac{(log(X)-\mu)^2}{2\sigma^6} \end{cases}\]
@@ -111,10 +127,40 @@ There is an another better approach for the first part of this question (maximum
 \end{problem}
 
 \begin{problem}{2}
+\item 1. We have the first moment $m_{1}=\mathbb{E}[X]=p$. Hence, $p_{MM}=\frac{1}{n}\sum_{i=1}^{n}X_i$.\\
+\item 2. We have the first moment $m_{1}=\mathbb{E}[X]=\lambda$. Hence, $\lambda_{MM}=\frac{1}{n}\sum_{i=1}^{n}X_i$.\\
+\item 3. We have the first moment $m_{1}=\mathbb{E}[X]=\frac{1}{\lambda}$. Hence, $\frac{1}{\lambda_{MM}}=\frac{1}{n}\sum_{i=1}^{n} \Leftrightarrow \lambda_{MM}=\frac{n}{\sum_{i=1}^{n}X_i}$.\\
+\item 4. We have:
+\[ \begin{cases} m_{1}=\mathbb{E}[X]=\mu \\ m_{2}=\mathbb{E}[X^2]=\mu^2 + \sigma^2 \end{cases}\]
+Hence, 
+\[ \begin{cases} \mu_{MM}=\frac{1}{n}\sum_{i=1}^{n}X_i \\ \mu_{MM}^2 + \sigma_{MM}^2 = \frac{1}{n}\sum_{i=1}^{n}X_{i}^{2} \end{cases} \Leftrightarrow \begin{cases} \mu_{MM}=\frac{1}{n}\sum_{i=1}^{n}X_i \\ \sigma_{MM}^2 = \frac{1}{n}\sum_{i=1}^{n}X_{i}^{2} - \mu_{MM}^2 \end{cases} \]
+\item 5. 
+Let's denote $y=x-a$, from question 5 problem 1 we have $y \sim Exp(\lambda)$. Hence: 
+\[ \begin{cases} \mathbb{E}[X]=\mathbb{E}[Y]+a=\frac{1}{\lambda} + a\\
+\mathbb{E}[X^2]=\mathbb{E}[(Y+a)^2]= \frac{2}{\lambda^2} + \frac{2a}{\lambda} + a^2 \end{cases}\].
+We have system equation:
+\[ \begin{cases} \frac{1}{\lambda_{MM}} + a_{MM}= \bar{X_n}\\
+ \frac{2}{\lambda_{MM}^2} + \frac{2a_{MM}}{\lambda_{MM}} + a_{MM}^2 = \bar{X_n}^2  \end{cases}  \Leftrightarrow  \begin{cases} \lambda_{MM} = \frac{1}{\sqrt{\bar{X_n}^2- \bar{X_n}}}\\ a = \bar{X_n} - \frac{1}{\lambda_{MM}} \end{cases}\].
+ 
+\item 6.
+Let's denote $Y=log(X)$. From question 6 Problem 1 we know $Y \sim N(\mu, \sigma)$\\
+Form question 4, we have 
+\[  \begin{cases} \mu_{MM}=\frac{1}{n}\sum_{i=1}^{n}Y_i = \frac{1}{n}\sum_{i=1}^{n}log(X_i) \\ \sigma_{MM}^2 = \frac{1}{n}\sum_{i=1}^{n}Y_{i}^{2} - \mu_{MM}^2 = \frac{1}{n}\sum_{i=1}^{n}log(X_{i})^{2} - \mu_{MM}^2 \end{cases} \] 
+
 
 
 \end{problem}
+\begin{problem}{3}
+\item 1. $\mathbb{P}[X=1]=\mathbb{P}[Exp(\lambda) > z]= 1- e^{-\lambda z} $. Hence $X_{i}$'s follow Bernoulli distribution with parameter $p=1- e^{-\lambda z}$.
+\item 2. We have $\bar{X_n}=\frac{1}{n}\sum_{i=1}^{n}X_i$. By CLL, $\bar{X_n} \sim N(\mathbb{E}[X], \frac{\mathbb{V}[X]}{n})$. From question 1, we have $\mathbb{E}[X]=p=1- e^{-\lambda z}$ and $\mathbb{V}[X]=p(1-p)=e^{-\lambda z}(1- e^{-\lambda z})$. Hence, $\bar{X_n} \sim N(1- e^{-\lambda z}, \frac{e^{-\lambda z}(1- e^{-\lambda z})}{n} )$.
+\item 3. From question 3 problem 1, we have $\lambda_{MLE}=\frac{1}{\sum_{i=1}^{n}X_i}=\frac{1}{\frac{1}{n}\sum_{i=1}^{n}}=\frac{1}{\bar{X_n}}$. We already know this is actually a consistent  estimator of true $\lambda$. Hence, $f(\bar{X_n})=\frac{1}{\bar{X_n}}$ is a consistent estimator of $\lambda$.\\
 
 
+\item 4. By Fisher Information and result from question 3 problem 1: 
+\[ \sqrt{n}(\lambda_{MLE} - \lambda) \xrightarrow{\text{d}} N(0, \lambda^2) \Leftrightarrow \sqrt{n}(f(\bar{X_n}) - \lambda) \xrightarrow{\text{d}} N(0, \lambda^2) \Leftrightarrow f(\bar{X_n}) \sim N(\lambda, \frac{\lambda^2}{n}) \]
+
+\item 5.  
+
+\end{problem}
 
 \end{document}
