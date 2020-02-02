@@ -1,0 +1,60 @@
+\documentclass[10pt]{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+\begin{document}
+\title{Problem Set 4}
+\author{Hoang Nguyen, Huy Nguyen}
+\maketitle
+    
+\begin{problem}{1}
+\item 1.
+We have this result from problem 2 in Problem Set 3: 
+\[ l(\theta) = \sum_{i=1}^{n} \Big ( -\frac{1}{2} log(\theta) -\frac{1}{2\theta} X_i^2\Big ) \]
+Taking deravite ans set to equal 0, we get:
+\[\frac{\partial l(\theta)}{\partial\theta} = \sum_{i=1}^{n}(-\frac{1}{2\theta} + \frac{1}{2\theta^2} X_i^2)=0 \Longleftrightarrow \theta^{MLE} = \frac{\sum_{i=1}^{n} X_i^2}{n} \tag{1}\]
+
+
+
+
+\item 2. 
+From (1), we have the second deraviate of log-likelihood:
+\[\frac{\partial l(\theta)}{\partial \theta^2} =\sum_{i=1}^{n} \Big ( \frac{1}{2\theta^2} - \frac{1}{2\theta^3}X_i^2 \Big ) \Leftrightarrow I(\theta) = -\sum_{i=1}^{n}\mathbb{E}[\frac{1}{2\theta^2} - \frac{1}{2\theta^3}X_i^2]= \frac{n}{2\theta^2}\]
+Hence,
+\[(\theta^{MLE} - \theta)  \xrightarrow[n \rightarrow \infty]{\text{(d)}} N(0, \frac{2\theta^2}{n})  \]
+
+
+
+
+\item 3.\\ 
+a) From previous question, we know: $I(\theta) = \frac{n}{2\theta^2}$. Hence, $\pi(\theta) = c\sqrt{det I(\theta)} = c\sqrt{\frac{n}{2\theta^2}}$. This is improper prior\\
+b) We have 
+\[ \pi(\theta| X_1,..,X_n) = \frac{\pi(\theta) p_n(X_1,..,X_n|\theta))}{\int_{0}^{\infty} p_n(X_1,..,X_n|t)d\pi(t)} = \frac{c\sqrt{\frac{n}{2\theta^2}} \frac{1}{(2\pi\theta)^{\frac{n}{2}}} e^{-\frac{1}{2\theta} \sum_{i}^{n} X_i^2}}{\int_{0}^{\infty} p_n(X_1,..,X_n|t)d\pi(t)} = \frac{c\sqrt{n}}{(2\pi\theta)^{\frac{n}{2}} \sqrt{2\theta^2}} e^{-\frac{1}{2\theta} \sum_{i}^{n} X_i^2}\]
+Hence, we can rewrite the posterio:
+\[\frac{c\sqrt{n}}{(2\pi\theta)^{\frac{n}{2}} \sqrt{2\theta^2}} e^{-\frac{1}{2\theta} \sum_{i}^{n} X_i^2} = \frac{c\sqrt{n}}{(2\pi)^{\frac{n}{2}} \sqrt{2}} \frac{e^{-\frac{\frac{1}{2} \sum_{i=1}^{n}}{\theta}}}{\theta^{\frac{n}{2} +1}} = \frac{c\sqrt{n}}{(2\pi)^{\frac{n}{2}} \sqrt{2}} \frac{e^{-\frac{\beta}{\theta}}}{\theta^{\alpha+1}} \]
+Where $\alpha = \frac{n}{2}$, $\beta = \frac{\sum_{i=1}^{n} X_i^2}{2}$ and $c$ is the constant satisfied $\frac{c\sqrt{n}}{(2\pi)^{\frac{n}{2}} \sqrt{2}} = \frac{\beta^{\alpha}}{\tau(\alpha)}$. This posterior is Gamma distribution with parameters $\alpha$ and $\beta$.
+c)\\
+We know $\hat{\theta^{(\pi)}}= \int_{0}^{\infty} \theta d \pi(\theta| X_1,..,X_n)$ is the expectation of Gamma distribution with parameters $\alpha$ and $\beta$. Hence, $\hat{\theta^{(\pi)}} = \frac{\beta}{\alpha - 1} = \frac{\sum_{i=1}^{n} X_i^2}{n -2}$.
+
+
+\end{problem}
+
+\begin{problem}{2}
+
+
+\end{problem}
+\begin{problem}{3}
+
+
+\end{problem}
+
+\end{document}
