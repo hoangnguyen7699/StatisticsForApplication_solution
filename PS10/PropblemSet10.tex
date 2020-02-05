@@ -49,6 +49,23 @@ We know $\hat{\theta^{(\pi)}}= \int_{0}^{\infty} \theta d \pi(\theta| X_1,..,X_n
 \end{problem}
 
 \begin{problem}{2}
+\item 1. Conditionally on $\beta$, we have $Y-X\beta \sim N_p(0, \sigma^2 I_n)$. Hence, $Y \sim N_p(X\beta, \sigma^2 I_n)$.
+\item 2.\\
+a) We know:
+\[ \pi(\beta| X_1,..,X_n) \propto  \pi(\beta) p_n(X_1,..,X_n|\beta)) \propto e^{\frac{1}{\sigma^2} ||Y - X\beta||_2^{2}} e^{\frac{1}{\tau^2}||\beta||_2^2} = e^{\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) } \]
+b) Let $\pi(\beta| X_1,..,X_n) = Ke^{\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) } $\\
+We know: 
+\[\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) = \frac{1}{\sigma^2}\Big ( (Y - X\beta)^{T}(Y - X\beta)  + \frac{\sigma^2}{\tau^2} \beta^{T}\beta \Big )\]
+\[ = \frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y + \beta^{T}X^{T}X\beta  + \frac{\sigma^2}{\tau^2} \beta^{T}\beta \Big ) =  \frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y \Big )+ \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta \]
+Hence, 
+\[ \pi(\beta| X_1,..,X_n) = Ke^{\frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y\Big ) + \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta} = K_1e^{\frac{-2}{\sigma^2}\beta^{T}X^{T}Y + \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta }\]
+\[= K_1e^{ \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta -\frac{2}{\sigma^2}\beta^{T}X^{T}Y   }\]
+Let $\sum^{-1} = \frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I$ and $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$. We can see that $\frac{1}{\sigma^2} X^{T}y = \sum^{-1}\mu$. Thereforce, we can rewrite
+\[ \pi(\beta| X_1,..,X_n) =  K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu } = K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu }= K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu - \mu^T\sum^{-1}\mu}\]
+We see that $ \mu^T\sum^{-1}\mu$ depends on $X$ and $Y$ which are constants, hence we can get rid this constant by rewrite:
+\[\pi(\beta| X_1,..,X_n) = K_2 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu} = K_2e^{(\beta - \mu)^{T}\sum^{-1}(\beta - \mu)}\]
+c)) The posterior mean of $\beta$ is the expectation of $g(\beta)$ which is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$
+
 
 
 \end{problem}
