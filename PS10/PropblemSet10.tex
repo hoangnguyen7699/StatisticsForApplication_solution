@@ -64,13 +64,27 @@ Let $\sum^{-1} = \frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I$ and $\mu = (X^{
 \[ \pi(\beta| X_1,..,X_n) =  K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu } = K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu }= K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu - \mu^T\sum^{-1}\mu}\]
 We see that $ \mu^T\sum^{-1}\mu$ depends on $X$ and $Y$ which are constants, hence we can get rid this constant by rewrite:
 \[\pi(\beta| X_1,..,X_n) = K_2 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu} = K_2e^{(\beta - \mu)^{T}\sum^{-1}(\beta - \mu)}\]
-c)) The posterior mean of $\beta$ is the expectation of $g(\beta)$ which is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$
-
-
+c) The posterior mean of $\beta$ is the expectation of $g(\beta)$ which is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$
+\item 3. \\
+a) Consider function $f(t)= ||Y-Xt||^2 + \lambda ||t||^2$. We take derivate and set it to be zero:
+\[\frac{\partial f(t)}{\partial t} = 2X^{T}Xt - 2X^{T}Y + 2\lambda = 0 \Longleftrightarrow \hat{\beta} = t = (X^{T}X + \lambda I)^{-1}X^{T}Y\]
+b) We know the posterio mean is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$. Hence, there exists a $\tau^2$ such that $\frac{\sigma^2}{\tau^2} = \lambda\Longleftrightarrow \tau^2 = \frac{\sigma^2}{\lambda}$.\\
+c) We know $Y \sim N_{p}(X\beta, \sigma^2 I)$. Hence
+\[\hat{\beta} = (X^{T}X + \lambda I)^{-1}X^{T}Y \sim N_{p} Big (0, \sigma^2\Big ((X^{T}X + \lambda I)^{-1}X^{T} \Big )^{T}\Big ((X^{T}X + \lambda I)^{-1}X^{T} \Big ) \Big ) = N_{p}(0, \sigma^2(X^{T}X + \lambda I)^{-1}) \]
+d) We have $\mathbb{E}[ ||\hat{\beta} - \beta||^2_2]=\sum_{i=1}^{D}\mathbb{E}[(\hat{\beta}_i -\beta_i)^2]=\sum_{i=1}^{D}Var(\hat{\beta}_i)=\sigma^2 tr((X^{T}X + \lambda I)^{-1})$.\\
 
 \end{problem}
 \begin{problem}{3}
-
+\item 1 Covariance matrix is a square matrix giving the covariance between each pair of elements of a given random vector. In the matrix diagonal there are variances, i.e., the covariance of each element with itself. The dimension is $n$.
+\item 2 The sample covariance matrix is the matrix whose elements are pairwise covariances of the vectors.
+\item 3 We have covariance matrix $C = \mathbb{E}[(X - \bar{X})(X-\bar{X})^{T}]$. Hence
+\[ u^{T}Cu = u^{T}\mathbb{E}[(X - \bar{X})(X-\bar{X})^{T}]u = \mathbb{E}[u^{T}(X - \bar{X})(X-\bar{X})^{T}u] = \mathbb{E}[\sigma^2]=\sigma^2 \geqslant 0\]
+\item 5 \\
+a) Let $B = AX$ and $b_{i}$ be the element ith of B. We have the element on i-row, j-column  of covarinace maxtrix $B'$ of B is calculated:
+\[ B'_{ij} = Cov(B_{i}, B_{j}) = Cov(A_{i}X, A_{j}X) = \mathbb{E}[(A_{i}X)(A_{j}X)^{T}]) - \mathbb{E}[A_{i}X]\mathbb{E}[A_{j}X]^{T} = A_{i}\mathbb{E}[XX^{T}]A_{j}^{T} - A_{i}\mathbb{E}[X]\mathbb{E}[X]^{T}A_{j}^{T} \]
+\[ = A_{i}(\mathbb{E}[XX^{T}] -\mathbb{E}[X]\mathbb{E}[X]^{T} )A_{j}^{T}  = A_{i}\sum A_{j}^{T} \]
+where $A_i$ denotes whole j row of matrix A. Hence, the covariance of $AX$ is $A\sum A^{T}$.\\
+b)
 
 \end{problem}
 

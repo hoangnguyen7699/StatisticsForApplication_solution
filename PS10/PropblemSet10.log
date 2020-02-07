@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.8)  4 FEB 2020 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.8)  7 FEB 2020 16:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,19 +429,53 @@ Overfull \hbox (0.85246pt too wide) detected at line 64
 /n/10 = \OML/cmm/m/it/10 K[]e[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 K[]e[]
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
+
+Overfull \hbox (7.34926pt too wide) detected at line 73
+[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 
+^^UI\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 X[]Y \OMS/cmsy/m/n/10 ^^X \OML/cmm/m/it
+/10 N[]Big\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; ^^[[][]\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )[]\OML/cm
+m/m/it/10 X[][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OM
+L/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 X[][][] \OT1/cmr/m/n/10 =
+ \OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; ^^[[]\OT1/cmr/m/n/10 
+(\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )
+[])
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
+ []
+
+
+Overfull \hbox (21.75224pt too wide) detected at line 84
+\OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (\OM
+L/cmm/m/it/10 B[]; B[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (
+\OML/cmm/m/it/10 A[]X; A[]X\OT1/cmr/m/n/10 ) = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [
+(\OML/cmm/m/it/10 A[]X\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 A[]X\OT1/cmr/m/n/10 )[
+]]) \OMS/cmsy/m/n/10 ^^@ \U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 A[]X\
+OT1/cmr/m/n/10 ]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 A[]X\OT1/cmr/m
+/n/10 ][] = \OML/cmm/m/it/10 A[]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/1
+0 XX[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/
+10 A[]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ]\U/msb
+/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10
+ A[]
+ []
+
 [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+ [3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
  (./PropblemSet10.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `PropblemSet10.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  ) 
 Here is how much of TeX's memory you used:
- 6545 strings out of 492982
- 93793 string characters out of 6134897
+ 6546 strings out of 492982
+ 93799 string characters out of 6134897
  196184 words of memory out of 5000000
  10050 multiletter control sequences out of 15000+600000
  10591 words of font info for 42 fonts, out of 8000000 for 9000
@@ -460,11 +494,12 @@ fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PropblemSet10.pdf (2 pages, 146755 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on PropblemSet10.pdf (3 pages, 160708 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
- 3 named destinations out of 1000 (max. 500000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 63 compressed objects within 1 object stream
+ 4 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
