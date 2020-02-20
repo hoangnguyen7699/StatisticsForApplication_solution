@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.9.8)  7 FEB 2020 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.2.15)  20 FEB 2020 19:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PropblemSet10.tex
 (./PropblemSet10.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -447,8 +447,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--75
 
  []
 
-
-Overfull \hbox (21.75224pt too wide) detected at line 84
+[2]
+Overfull \hbox (21.75224pt too wide) detected at line 88
 \OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (\OM
 L/cmm/m/it/10 B[]; B[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 A[]X; A[]X\OT1/cmr/m/n/10 ) = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [
@@ -462,24 +462,28 @@ OT1/cmr/m/n/10 ]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 A[]X\OT1/cmr/m
  A[]
  []
 
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
- [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 109.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 109.
  (./PropblemSet10.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 109.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 109.
 Package rerunfilecheck Info: File `PropblemSet10.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 109.
  ) 
 Here is how much of TeX's memory you used:
- 6546 strings out of 492982
- 93799 string characters out of 6134897
- 196184 words of memory out of 5000000
- 10050 multiletter control sequences out of 15000+600000
+ 6546 strings out of 494880
+ 93799 string characters out of 6179601
+ 192405 words of memory out of 5000000
+ 9807 multiletter control sequences out of 15000+600000
  10591 words of font info for 42 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 36 hyphenation exceptions out of 8191
  28i,11n,32p,416b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
@@ -496,7 +500,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on PropblemSet10.pdf (3 pages, 160708 bytes).
+Output written on PropblemSet10.pdf (3 pages, 165711 bytes).
 PDF statistics:
  85 PDF objects out of 1000 (max. 8388607)
  63 compressed objects within 1 object stream
