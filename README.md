@@ -19,10 +19,10 @@ If you want to view only pdf files, you can clone this repository and find pdf f
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet4.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS4/ProbemSet4.pdf) solution manual file for Problem set 4 
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet5.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS5/ProblemSet5.pdf) solution manual file for Problem set 5.
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet6.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS6/ProblemSet6.pdf) solution manual file for Problem set 6 
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet7.pdf) questions for Problem set 7 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet7.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS7/ProlemSet7_solustion.pdf) solution manual file for Problem set 7 
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet8.pdf) questions for Problem set 8 
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet9.pdf) questions for Problem set 9 
-1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet10.pdf) questions for Problem set 10 
+1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet10.pdf) questions and [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/PS10/PropblemSet10.pdf) solution manual file for Problem set 10 
 1. [PDF](https://github.com/hoangnguyen7699/StatisticsForApplication_solution/blob/master/MIT18_650F16_PSet11.pdf) questions for Problem set 11 
 
 ### Contribute
