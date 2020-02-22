@@ -1,0 +1,115 @@
+\documentclass[10pt]{article}
+\usepackage{hyperref}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+
+
+\begin{document}
+\title{Problem Set 10}
+\author{Hoang Nguyen, Huy Nguyen}
+\maketitle
+    
+\begin{problem}{1}
+\item 1.
+We have PDF: $p(x) = p^{x}(1-p)^{1-x} = e^{xlog(p) + (1-x)log(1-p)}$. Hence we have: 
+\[\begin{cases} \eta_{1}=log(p) \\ \eta_{2} = log(1-p) \\ T_{1}(x)= x \\ T_{2}(x)=1-x \\ h(x) = 1 \\ B(p)=0   \end{cases} \]
+
+
+
+
+\item 2. 
+We have PDF $p(x) = e^{\mu x- \frac{\mu^2}{2}}\frac{e^{\frac{-x^{2}}{2}}}{\sqrt{2\pi}}$.Hence
+\[\begin{cases} \eta=\mu \\  T(x)= x  \\ h(x) = \frac{e^{\frac{-x^{2}}{2}}}{\sqrt{2\pi}} \\ B(p)=\frac{\mu^2}{2}   \end{cases} \]
+
+
+
+
+\item 3. 
+We have PDF $p(x) = e^{\frac{\mu}{\sigma^2} - \frac{1}{2\sigma^2}x^{2} - \frac{\mu^2}{2\sigma^2}}\frac{1}{\sigma\sqrt{2\pi}}$. Hence
+\[ \begin{cases} \eta_{1}=\frac{\mu}{\sigma^2} \\ \eta_{2} = -\frac{1}{2\sigma^2} \\ T_{1}(x)= x \\ T_{2}(x)=x^{2} \\ h(x) = 1 \\ B(p)=\frac{\mu^2}{2\sigma^2} + log(\sigma\sqrt{2\pi})   \end{cases} \]
+
+\item 4.
+We have $p(x) = \lambda e^{-\lambda x}$. Hence
+\[ \begin{cases} \eta=-\lambda \\  T(x)= x  \\ h(x) = \lambda \\ B(p)=0   \end{cases}\]
+
+\item 5.
+We have $p(x)= \frac{1}{\upsilon} = e^{-log(\upsilon)}$. Hence
+We have $p(x) = \lambda e^{-\lambda x}$. Hence
+\[ \begin{cases} \eta=-log(\upsilon) \\  T(x)= 1  \\ h(x) = 1 \\ B(p)=0   \end{cases}\]
+
+\item 6.
+We have $p(x) = \frac{\beta^{\alpha}}{\mathbb{I}(\alpha)}x^{\alpha - 1}e^{-\beta x} = e^{-\beta x + (\alpha -1)log(x)}\frac{\beta^{\alpha}}{\mathbb{I}(\alpha)}$. Hence
+\[\begin{cases} \eta_{1}=-\beta \\ \eta_{2} = \alpha -1 \\ T_{1}(x)= x \\ T_{2}(x)=log(x) \\ h(x) = 1 \\ B(p)= -log(\frac{\beta^{\alpha}}{\mathbb{I}(\alpha)})   \end{cases} \] 
+
+\item 7.
+We have $p(x) = \frac{\lambda^{x} e^{-\lambda}}{x!} = e^{-\lambda + log(\lambda) x}\frac{1}{x!}$. Hence
+\[\begin{cases} \eta_{1}=log(\lambda)\\  T(x)= x \\  h(x) = \frac{1}{x!} \\ B(p)= -\lambda   \end{cases} \]
+
+\end{problem}
+
+\begin{problem}{2}
+\item 1. Conditionally on $\beta$, we have $Y-X\beta \sim N_p(0, \sigma^2 I_n)$. Hence, $Y \sim N_p(X\beta, \sigma^2 I_n)$.
+\item 2.\\
+a) We know:
+\[ \pi(\beta| X_1,..,X_n) \propto  \pi(\beta) p_n(X_1,..,X_n|\beta)) \propto e^{\frac{1}{\sigma^2} ||Y - X\beta||_2^{2}} e^{\frac{1}{\tau^2}||\beta||_2^2} = e^{\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) } \]
+b) Let $\pi(\beta| X_1,..,X_n) = Ke^{\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) } $\\
+We know: 
+\[\frac{1}{\sigma^2} \Big ( ||Y - X\beta||_2^{2} + \frac{\sigma^2}{\tau^2} ||\beta||_2^2 \Big ) = \frac{1}{\sigma^2}\Big ( (Y - X\beta)^{T}(Y - X\beta)  + \frac{\sigma^2}{\tau^2} \beta^{T}\beta \Big )\]
+\[ = \frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y + \beta^{T}X^{T}X\beta  + \frac{\sigma^2}{\tau^2} \beta^{T}\beta \Big ) =  \frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y \Big )+ \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta \]
+Hence, 
+\[ \pi(\beta| X_1,..,X_n) = Ke^{\frac{1}{\sigma^2}\Big ( Y^{T}Y - 2\beta^{T}X^{T}Y\Big ) + \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta} = K_1e^{\frac{-2}{\sigma^2}\beta^{T}X^{T}Y + \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta }\]
+\[= K_1e^{ \beta^{T}(\frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I)\beta -\frac{2}{\sigma^2}\beta^{T}X^{T}Y   }\]
+Let $\sum^{-1} = \frac{1}{\sigma^2} X^{T}X + \frac{1}{\tau^2} I$ and $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$. We can see that $\frac{1}{\sigma^2} X^{T}y = \sum^{-1}\mu$. Thereforce, we can rewrite
+\[ \pi(\beta| X_1,..,X_n) =  K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu } = K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu }= K_1 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu - \mu^T\sum^{-1}\mu}\]
+We see that $ \mu^T\sum^{-1}\mu$ depends on $X$ and $Y$ which are constants, hence we can get rid this constant by rewrite:
+\[\pi(\beta| X_1,..,X_n) = K_2 e^{\beta^T \sum^{-1} \beta - 2\beta \sum^{-1}\mu + \mu^T\sum^{-1}\mu} = K_2e^{(\beta - \mu)^{T}\sum^{-1}(\beta - \mu)}\]
+c) The posterior mean of $\beta$ is the expectation of $g(\beta)$ which is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$
+\item 3. \\
+a) Consider function $f(t)= ||Y-Xt||^2 + \lambda ||t||^2$. We take derivate and set it to be zero:
+\[\frac{\partial f(t)}{\partial t} = 2X^{T}Xt - 2X^{T}Y + 2\lambda = 0 \Longleftrightarrow \hat{\beta} = t = (X^{T}X + \lambda I)^{-1}X^{T}Y\]
+b) We know the posterio mean is $\mu = (X^{T}X + \frac{\sigma^2}{\tau^2} I)^{-1}X^{T}y$. Hence, there exists a $\tau^2$ such that $\frac{\sigma^2}{\tau^2} = \lambda\Longleftrightarrow \tau^2 = \frac{\sigma^2}{\lambda}$.\\
+c) We know $Y \sim N_{p}(X\beta, \sigma^2 I)$. Hence
+\[\hat{\beta} = (X^{T}X + \lambda I)^{-1}X^{T}Y \sim N_{p} Big (0, \sigma^2\Big ((X^{T}X + \lambda I)^{-1}X^{T} \Big )^{T}\Big ((X^{T}X + \lambda I)^{-1}X^{T} \Big ) \Big ) = N_{p}(0, \sigma^2(X^{T}X + \lambda I)^{-1}) \]
+d) We have $\mathbb{E}[ ||\hat{\beta} - \beta||^2_2]=\sum_{i=1}^{D}\mathbb{E}[(\hat{\beta}_i -\beta_i)^2]=\sum_{i=1}^{D}Var(\hat{\beta}_i)=\sigma^2 tr((X^{T}X + \lambda I)^{-1})$.\\
+
+\end{problem}
+\begin{problem}{3}
+\item 1. Covariance matrix is a square matrix giving the covariance between each pair of elements of a given random vector. In the matrix diagonal there are variances, i.e., the covariance of each element with itself. The dimension is $p$ by $p$.
+\item 2. The sample covariance matrix is the matrix whose elements are pairwise covariances of the vectors.
+\item 3. We have covariance matrix $C = \mathbb{E}[(X - \bar{X})(X-\bar{X})^{T}]$. Hence
+\[ u^{T}Cu = u^{T}\mathbb{E}[(X - \bar{X})(X-\bar{X})^{T}]u = \mathbb{E}[u^{T}(X - \bar{X})(X-\bar{X})^{T}u] = \mathbb{E}[\sigma^2]=\sigma^2 \geqslant 0\]
+\item 4. \\
+We know $S=\frac{1}{n}\sum_{i=1}^{n}X_{i}X_{i}^{T} - \bar{X}\bar{X}^{T}$. Hence:
+\[u^{T}Su = \frac{1}{n}\sum_{i=1}^{n}u^{T}X_{i} (X_{i}^{T}u) - u\bar{X}(\bar{X}^{T}u) = \frac{1}{n}\sum_{i=1}^{n}(u^{T}X_{i})^2 - (u^{T}\bar{X})^2 \]
+On the other hand, $u^{T}\bar{X} = \frac{1}{n}\sum_{i=1}^{n}u^TX_{i}=\bar{u^{T}X}$. Hence $u^{T}Su = \frac{1}{n}\sum_{i=1}^{n}u^{T}X_{i} (X_{i}^{T}u) - \bar{u^{T}X}^2 \Rightarrow $ $u^{T}Su $ is sample variance of $u^{X}$, hecne this has to be greater or equal to 0.
+\item 5. \\
+a) Let $B = AX$ and $b_{i}$ be the element ith of B. We have the element on i-row, j-column  of covarinace maxtrix $B'$ of B is calculated:
+\[ B'_{ij} = Cov(B_{i}, B_{j}) = Cov(A_{i}X, A_{j}X) = \mathbb{E}[(A_{i}X)(A_{j}X)^{T}]) - \mathbb{E}[A_{i}X]\mathbb{E}[A_{j}X]^{T} = A_{i}\mathbb{E}[XX^{T}]A_{j}^{T} - A_{i}\mathbb{E}[X]\mathbb{E}[X]^{T}A_{j}^{T} \]
+\[ = A_{i}(\mathbb{E}[XX^{T}] -\mathbb{E}[X]\mathbb{E}[X]^{T} )A_{j}^{T}  = A_{i}\sum A_{j}^{T} \]
+where $A_i$ denotes whole j row of matrix A. Hence, the covariance of $AX$ is $A\sum A^{T}$.\\
+b) For any non-zero vector $ u \in \mathbb{R}^{q}$, we have:
+\[ u^{T}A\sum A^{T}u^{T} = (A^{T}u)\sum (A^{T}u)^{T} \]
+If $A^{T}$ has full column rank which means for any non-zero u, $A^{T}u = 0$ is impossible, hence $u^{T}A\sum A^{T}u^{T} = (A^{T}u)\sum (A^{T}u)^{T} > 0 \Rightarrow $ all eigenvalues of $A\sum A^{T}$ are positive, hence covariance of $AX$ is invertible. \\
+If $A^{T}$ does not have full column rank, there exsists non-zero vector u such that $A^{T}u = 0$. That u make $u^{T}A\sum A^{T}u^{T} = (A^{T}u)\sum (A^{T}u)^{T} = 0$ which means there is at least an eigenvalue of $A\sum A^{T}$ that is equal to 0, hence covariance of $AX$ is not invertible.\\
+c) We have $\sum = \mathbb{E}[(u^{T}X) (X^{T}u)] - \mathbb{E}[u^{T}X]\mathbb{E}[u^{T}X]^{T}= u^{T}\mathbb{E}[XX^{T}]u - u^{T}\mathbb{E}[X]\mathbb{E}[X]^{T}u = u^{T}\sum_{X}u$.
+\item 6.\\
+a) Using similar methhof from previous questions, sample covariance matrix of $BX_1, BX_2,..,BX_n$ are $B\hat{\sum}_{1}B^{T}, B\hat{\sum}_{2}B^{T},...,B\hat{\sum}_{n}B^{T}$.\\
+b) Using similar methhof from previous questions, sample covariance matrix of $u^{T}X_1, u^{T}X_2,..,u^{T}X_n$ are $u^{T}\hat{\sum}_{1}u, u^{T}\hat{\sum}_{2}u,...,u^{T}\hat{\sum}_{n}u$.\\
+\item 7. \\
+We know $\mathbb{E}[X^{T}A^{T}AX] = \sum_{i=1}^{k}\mathbb{E}[(A_{i}X)^{T}(A_iX)]$\\
+On the other hand, 
+\[ ||A\mu||_{2}^{2} + Tr(A\sum A^{T}) = \sum_{i=1}^{k}A_{i}^{T}\mu \mu^{T}A_{i} + Cov(A_{i}^{T}X, A_{i}^{T}X) = \sum_{i=1}^{k}A_{i}^{T}\mu \mu^{T}A_{i} + \mathbb{E}[A_{i}^{T}XX^{T}A_{i}] - A_{i}^{T}\mu \mu^{T} A_{i}\]
+\[ = \sum_{i=1}^{k}\mathbb{E}[A_{i}^{T}XX^{T}A_{i}] =  \sum_{i=1}^{k}\mathbb{E}[(A_{i}X)^{T}(A_iX)]\]
+
+
+
+\end{problem}
+
+\end{document}
