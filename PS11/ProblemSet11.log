@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.2.15)  22 FEB 2020 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.2.15)  23 FEB 2020 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -424,89 +424,50 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (0.85246pt too wide) detected at line 70
-\OML/cmm/m/it/10 ^^Y\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L\OMS/cmsy/m/n/10 j\OML
-/cmm/m/it/10 X[]; ::; X[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 K[]e[] \OT1/cmr/m
-/n/10 = \OML/cmm/m/it/10 K[]e[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 K[]e[]
+Overfull \hbox (5.74615pt too wide) detected at line 63
+\U/msb/m/n/10 E\OT1/cmr/m/n/10 [[]\OML/cmm/m/it/10 log\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ))] = [] []\OML/
+cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) = [] []\OML
+/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) + [] [][]\
+OML/cmm/m/it/10 dx[] \OT1/cmr/m/n/10 = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [([])[]]
  []
 
-
-Overfull \hbox (7.34926pt too wide) detected at line 79
-[] \OT1/cmr/m/n/10 = (\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 
-^^UI\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 X[]Y \OMS/cmsy/m/n/10 ^^X \OML/cmm/m/it
-/10 N[]Big\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; ^^[[][]\OT1/cmr/m/n/10 (\OML/cmm
-/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )[]\OML/cm
-m/m/it/10 X[][][][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OM
-L/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )[]\OML/cmm/m/it/10 X[][][] \OT1/cmr/m/n/10 =
- \OML/cmm/m/it/10 N[]\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; ^^[[]\OT1/cmr/m/n/10 
-(\OML/cmm/m/it/10 X[]X \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 ^^UI\OT1/cmr/m/n/10 )
-[])
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--81
-
- []
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 92.
 [2]
-Overfull \hbox (21.75224pt too wide) detected at line 94
-\OML/cmm/m/it/10 B[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (\OM
-L/cmm/m/it/10 B[]; B[]\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 Cov\OT1/cmr/m/n/10 (
-\OML/cmm/m/it/10 A[]X; A[]X\OT1/cmr/m/n/10 ) = \U/msb/m/n/10 E\OT1/cmr/m/n/10 [
-(\OML/cmm/m/it/10 A[]X\OT1/cmr/m/n/10 )(\OML/cmm/m/it/10 A[]X\OT1/cmr/m/n/10 )[
-]]) \OMS/cmsy/m/n/10 ^^@ \U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 A[]X\
-OT1/cmr/m/n/10 ]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 A[]X\OT1/cmr/m
-/n/10 ][] = \OML/cmm/m/it/10 A[]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/1
-0 XX[]\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 A[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/
-10 A[]\U/msb/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ]\U/msb
-/m/n/10 E\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 X\OT1/cmr/m/n/10 ][]\OML/cmm/m/it/10
- A[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 102--105
-
- []
-
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
- [4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
  (./ProblemSet11.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `ProblemSet11.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 92.
  ) 
 Here is how much of TeX's memory you used:
- 6547 strings out of 494880
- 93792 string characters out of 6179601
- 192401 words of memory out of 5000000
+ 6545 strings out of 494880
+ 93780 string characters out of 6179601
+ 188401 words of memory out of 5000000
  9807 multiletter control sequences out of 15000+600000
  10591 words of font info for 42 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 28i,10n,32p,312b,393s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,10n,32p,515b,387s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on ProblemSet11.pdf (4 pages, 165673 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on ProblemSet11.pdf (2 pages, 139382 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
- 69 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
+ 77 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 3 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
