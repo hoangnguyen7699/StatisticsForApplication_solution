@@ -76,13 +76,13 @@ c) From previous result, $\mathbb{E}[x]=b'(\theta)= \frac{\alpha}{\theta}$ and $
 
 \end{problem}
 \begin{problem}{3}
-\item 1. $Z_{1}$ is either 0 or 1, hence $Z_{1}$ is Bernoulli distribution conditional on $X_{i}$ with parameter $p=F(-X^{T}\beta)$.
-\item 2. We have $\mathbb{E}[Z]=p=F(-X^{T}\beta)$. Hence $g(F(-X^{T}\beta)) = X^{T}\beta \Rightarrow g(x)=-F^{-1}(x)$.
-\item 3. If $\epsilon$ is standard Gaussian, becasue CDF of standard Gaussian is even function, hence $F(x)=-F(x) \Rightarrow g(x)=-F^{-1}(x)=F^{-1}(x)$. 
+\item 1. $Z_{1}$ is either 0 or 1, hence $Z_{1}$ is Bernoulli distribution conditional on $X_{i}$ with parameter $p=1-F(-X^{T}\beta)$.
+\item 2. We have $\mathbb{E}[Z]=p=F(-X^{T}\beta)$. Hence $g(1-F(-X^{T}\beta)) = X^{T}\beta \Rightarrow g(x)= (1-F(-x))^{-1}$.
+\item 3. If $\epsilon$ is standard Gaussian, then  $g(x)=(1-F(-x))^{-1}=(1-\phi(-x))^{-1}=\phi(x)^{-1}$.
 \item 4. \\
 a) $F(t)= \int \frac{e^{-t}}{(1+e^{-1})^2} = -\frac{e^{-t}}{1+e^{-t}}$\\
-b) $g(x)= -F^{-1}(x)=log(\frac{x}{1-x})$\\
-c) This link is called logit link.
+b) $g(x)= 1-F^{-1}(x)=1-log(\frac{x}{1-x})$\\
+c) 
 
 
 
