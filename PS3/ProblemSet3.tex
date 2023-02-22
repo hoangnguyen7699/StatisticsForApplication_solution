@@ -85,7 +85,8 @@ Using (3) and (4), we conclude that  $\sigma_{MLE}^2$ is consistent.
 We have: $KL(\mathcal{N}(a, \sigma^2), \mathcal{N}(b, \sigma^2))=\mathbb{E}_P\left[\log{\frac{f_P(x)}{f_Q(x)}}\right]=\mathbb{E}_P\left[\log{f_P(x)}\right] - \mathbb{E}_P\left[\log{f_Q(x)}\right] = \frac{(a-b)^2}{2\sigma^2}$.\\
 \item 2.
 We have: $KL(Ber(a), Ber(b))=\mathbb{E}_P\left[\log{\frac{f_P(x)}{f_Q(x)}}\right]=\sum_{x \in E}p(x)\log{\frac{p(x)}{q(x)}} = a\log{\frac{a}{b}} + (1-a)\log{\frac{1-a}{1-b}}$.\\
-
+%%% expectations involve logarithms
+%%% expectations computed with respect to the P measure, not the Q measure
 \end{problem}
 
 
